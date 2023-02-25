@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+//Structure of a "post" document
 const PostSchema = new mongoose.Schema({
     title:{
         type: String,
@@ -30,5 +30,5 @@ const PostSchema = new mongoose.Schema({
         default: Date.now,
     },
 })
-
+//PostSchema is exported to mongoose model with the name 'Post'
 module.export = mongoose.model('Post', PostSchema)
