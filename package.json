@@ -18,10 +18,12 @@
   "homepage": "https://github.com/Krisalord/SocialNetworkProject#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "cloudinary": "^1.34.0",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "mongodb": "^5.1.0",
-    "mongoose": "^6.10.0"
+    "mongoose": "^6.10.0",
+    "passport": "^0.6.0"
   }
 }
