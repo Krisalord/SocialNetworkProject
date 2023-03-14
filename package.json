@@ -1,0 +1,19 @@
+{
+  "name": "socialnetworkproject",
+  "version": "1.0.0",
+  "description": "Social Network Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krisalord/SocialNetworkProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krisalord/SocialNetworkProject/issues"
+  },
+  "homepage": "https://github.com/Krisalord/SocialNetworkProject#readme"
+}
