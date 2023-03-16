@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const connectDB = async ()=>{
     try{
         //connection string, uses mongoose connect method, connection string is read from DB_STRING variable (enviromental)
-        const connect = await mongoose.connect(process.evn.DB_STRING,{
+        const connect = await mongoose.connect(process.env.DB_STRING,{
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
@@ -18,4 +18,4 @@ const connectDB = async ()=>{
     }
 }
 //export connectDB string to be used later
-module.export = connectDB;
+module.exports = connectDB
