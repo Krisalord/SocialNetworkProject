@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+/**************************************/
+/**************  HEADER  **************/
+/**************************************/
+header div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-bottom: 1px solid black;
+}
