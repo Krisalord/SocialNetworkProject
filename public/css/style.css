@@ -1,14 +1,77 @@
+/**************************************/
+/**************************************/
+/**************  GENERAL  *************/
+/**************************************/
+/**************************************/
 *{
     box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-size: 62.5%;
+}
+a:link{
+    text-decoration: none;
+    color: #555555;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: underline;
 }
 /**************************************/
-/**************  HEADER  **************/
 /**************************************/
-header div{
+/************  FOR REUSE  *************/
+/**************************************/
+/**************************************/
+.flexToCenter{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/**************************************/
+/**************************************/
+/**************  HEADER  **************/
+/**************************************/
+/**************************************/
+header{
+    height: 100px;
+    width: 100vw;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header div{
+    display: flex;
     flex-direction: column;
-
-    border-bottom: 1px solid black;
+    align-items: center;
+}
+header span{
+    font-size: 2rem;
+}
+header img{
+    height: 64px;
+    width: 64px;
+}
+/**************************************/
+/**************************************/
+/**************  INDEX   **************/
+/**************************************/
+/**************************************/
+.indexWrapper{
+    height: calc(100vh - 100px);
+}
+.indexWrapper span{
+    font-size: 2rem;
+    border: 2px solid black;
+    transition-duration: 0.4s;
+}
+.indexWrapper span:hover{
+    background-color: #555555;
+    color: white;
 }
