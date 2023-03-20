@@ -12,7 +12,6 @@ body{
 }
 a:link{
     text-decoration: none;
-    color: #555555;
 }
 a:visited{
     text-decoration: none;
@@ -45,6 +44,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.15);
+    
 }
 header div{
     display: flex;
@@ -70,8 +71,14 @@ header img{
     font-size: 2rem;
     border: 2px solid black;
     transition-duration: 0.4s;
+    padding: 15px;
+    margin: 10px;
 }
 .indexWrapper span:hover{
     background-color: #555555;
     color: white;
+}
+a span{
+    color: #555555;
+    font-size: 24px;
 }
