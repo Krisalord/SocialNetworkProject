@@ -1,7 +1,14 @@
-<%- include('partials/header') -%>
+<%- include('partials/headerNoAuth') -%>
 
-<div class='signUpWrapper'>
+<div class='signupWrapper'>
     <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <script>
+                alert("<%= el.msg %>");
+            </script>
+        <% }) %>    
+    <% } %>
+    <!-- <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div><%= el.msg %></div>
         <% }) %>    
@@ -10,15 +17,17 @@
         <% messages.info.forEach( el => { %>
             <div><%= el.msg %></div>
         <% }) %>    
-    <% } %>
-    <form action="/signup" method="POST">
+    <% } %> -->
+    <form action="/signup" method="POST" class='mainSignupBox'>
+        <img src='/images/logoWhite.png'>
+        <span class='signupSpan'>Sign Up to KLapp</span>
         <div>
             <input type="text" id="userName" name="userName" placeholder="User name">
         </div>
         <div>
             <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Email address">
         </div>
-        <div id="emailHelp">* We'll never share your email with anyone else.</div>
+        <span id="emailHelp">We'll never share your email with anyone else.</span>
         <div>
             <input type="password" id="password" name="password" placeholder="Password">
         </div>
@@ -26,7 +35,7 @@
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
         </div>
         <button type="submit">Submit</button>
-        </form>
+    </form>
 </div>
 
 <%- include('partials/footer') -%>

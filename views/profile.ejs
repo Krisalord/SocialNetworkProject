@@ -1,37 +1,41 @@
-<%- include('partials/header') -%>
+<%- include('partials/headerAuth') -%>
 
-<div class='profileInfoWrapper'>
-	<div class='profilePictureWrapper'>
-		<img src='/images/pfpPlaceholder.jpg'>
-	</div>
-	<div class='profileTextWrapper'>
-		<p>User Name: <%= user.userName %></p>
-		<p>Email: <%= user.email %></p>
-		<a href="/logout"><p>Log Out</p></a>
-	</div>
-</div>
-<div class='addPostWrapper'>
-	<h2>Add a post</h2>
-	<form action="/post/createPost" enctype="multipart/form-data" method="POST">
-		<input type="text" id="title" name="title" placeholder="Title">
-		<textarea id="caption" name="caption" placeholder="Caption"></textarea>
-		<div>
-			<input type="file" id="imageUpload" name="file">
+	<div class='profileInfoWrapper'>
+		<div class='profilePictureWrapper'>
+			<img src='/images/pfpPlaceholder.jpg'>
 		</div>
-		<button type="submit" value="Upload">Submit</button>
-	</form>
-</div>
-<div class='myPostsWrapper'>
-	<ul>
-		<% for(var i=0; i<posts.length; i++) {%>
-			<li>
-				<a href="/post/<%=posts[i]._id%>"><img src="<%= posts[i].image%>" class='myPostsImg'></a>
-			</li>
-		<% } %>
-	</ul>
-</div>
-<div class='returnToFeed'>
-	<span><a href="/feed">Return to Feed</a></span>
-</div>
+		<div class='profileTextWrapper'>
+			<span><%= user.userName %></span>
+			<br>
+			<span><%= user.email %></span>
+		</div>
+	</div>
+	
+	<div class='addPostWrapper'>
+		<form action="/post/createPost" enctype="multipart/form-data" method="POST">
+			<h2>Add a post</h2>
+			<input type="text" id="title" name="title" placeholder="Title">
+			<textarea id="caption" name="caption" placeholder="Caption"></textarea>
+			<div>
+				<input type="file" id="imageUpload" name="file">
+			</div>
+			<button type="submit" value="Upload">Submit</button>
+		</form>
+	</div>
+
+	<div class='myPostsWrapper'>
+		<ul>
+			<% for(var i=0; i<posts.length; i++) {%>
+				<li>
+					<a href="/post/<%=posts[i]._id%>"><img src="<%= posts[i].image%>" class='myPostsImg'></a>
+				</li>
+			<% } %>
+		</ul>
+	</div>
+	<div class='returnToFeed'>
+		<span><a href="/feed">Return to Feed</a></span>
+	</div>
+
+
 
 <%- include('partials/footer') -%>

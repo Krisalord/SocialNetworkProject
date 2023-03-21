@@ -9,106 +9,261 @@
 }
 body{
     font-size: 62.5%;
-}
-a:link{
-    text-decoration: none;
-    color: black;
-}
-a:visited{
-    text-decoration: none;
-    color: black;
-}
-a:hover{
-    text-decoration: none;
-    color: black;
-}
-a:active{
-    text-decoration: underline;
-    color: black;
+    background-color: #141414;
+    color: #F5F5F5;
 }
 ul{
     list-style: none;
     padding: 0;
     margin: 0;
 }
+a{
+    text-decoration: none;
+}
 /**************************************/
 /**************************************/
 /************  FOR REUSE  *************/
 /**************************************/
 /**************************************/
-.btn{
-    height: 35px;
-    width: 95px;
-    font-size: 1rem;
-    transition-duration: 0.4s;
-    border: none;
-    background-color: #555555;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.btn:hover{
-    background-color: #333333;
-    color: white;
-}
+
 /**************************************/
 /**************************************/
 /**************  HEADER  **************/
 /**************************************/
 /**************************************/
-header{
-    height: 100px;
-    width: 100vw;
-    padding: 0 25px;
+/***************  AUTH  ***************/
+.authHeaderWrapper{
+    height: 50px;
     display: flex;
-    align-items: center;
+    background-color: #222222;
+}
+.authHeaderBox{
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.15);
-}
-header div{
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
-header span{
-    font-size: 2rem;
+.authHeaderBox img{
+    height: 45px;
 }
-header img{
-    height: 64px;
-    width: 64px;
+.authHeaderBox span{
+    color: #F5F5F5;
+    font-size: 1.3rem;
+}
+/************** NO AUTH  **************/
+.noAuthHeaderWrapper{
+    height: 50px;
+    display: flex;
+    background-color: #222222;
+}
+.noAuthHeaderBox{
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.noAuthHeaderBox img{
+    height: 45px;
+}
+.noAuthHeaderBox span{
+    color: #F5F5F5;
+    font-size: 1.3rem;
 }
 /**************************************/
 /**************************************/
 /**************  INDEX  ***************/
 /**************************************/
 /**************************************/
+/* main wrapper for the page */
 .indexWrapper{
     height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
+    padding-top: 150px;
+}
+/* colored box with login/reg */
+.mainIndexBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 340px;
+    width: 300px;
+    padding: 24px;
+    background-color: #222222;
+    border-radius: 15px;
+}
+/* Logo */
+.mainIndexBox img{
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+}
+/* text after logo */
+.mainIndexBox .signInSpan{
+    font-size: 1.5rem;
+    color: #F5F5F5;
+}
+/* button for login */
+.signInBtn{
+    height: 40px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.indexWrapper a{
-    margin: 0 2rem;
+.signInBtn span{
+    font-size: 1.2rem;
+}
+/* breaker */
+.indexOr{
+    font-size: 1rem;
+    opacity: 55%;
+}
+/* reg button */
+.signUpBtn{
+    height: 40px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #4c5699;
+    color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signUpBtn span{
+    font-size: 1.2rem;
 }
 /**************************************/
 /**************************************/
 /**************  LOGIN  ***************/
 /**************************************/
 /**************************************/
-.loginWrapper section form{
-    height: 350px;
-    width: 80%;
-    max-width: 400px;
-    margin: 0 auto;
-    font-size: 1rem;
-}
-.loginWrapper section form div{
+.loginWrapper{
+    height: calc(100vh - 100px);
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    width: 100%;
+    justify-content: center;
+    padding-top: 150px;
+}
+.mainLoginBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 340px;
+    width: 300px;
+    padding: 24px;
+    background-color: #222222;
+    border-radius: 15px;
+}
+/* Logo */
+.mainLoginBox img{
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+}
+/* text after logo */
+.mainLoginBox .logInSpan{
+    font-size: 1.5rem;
+    color: #F5F5F5;
+}
+/* button for login */
+.mainLoginBox button{
+    height: 40px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Text boxes for email/password */
+.mainLoginBox input{
+    height: 40px;
+    width: 240px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #333333;
+}
+.mainLoginBox input::placeholder{
+    opacity: 0%;
+}
+.mainLoginBox input:focus{
+    outline: none;
+    border: 3px solid #4c5699;
+}
+/**************************************/
+/**************************************/
+/************  SIGN UP  ***************/
+/**************************************/
+/**************************************/
+.signupWrapper{
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+.mainSignupBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 480px;
+    width: 300px;
+    padding: 24px;
+    background-color: #222222;
+    border-radius: 15px;
+}
+/* Logo */
+.mainSignupBox img{
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+}
+/* text after logo */
+.mainSignupBox .signupSpan{
+    font-size: 1.5rem;
+    color: #F5F5F5;
+}
+/* button for signUp */
+.mainSignupBox button{
+    height: 40px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #4c5699;
+    color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Text boxes for email/password */
+.mainSignupBox input{
+    height: 40px;
+    width: 240px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #333333;
+}
+.mainSignupBox input::placeholder{
+    opacity: 0%;
+}
+.mainSignupBox input:focus{
+    outline: none;
+    border: 3px solid #4c5699;
+}
+#emailHelp{
+    font-size: 1.2rem;
+    text-align: center;
 }
 /**************************************/
 /**************************************/
@@ -117,12 +272,15 @@ header img{
 /**************************************/
 /***********  PROFILE INFO ************/
 .profileInfoWrapper{
+    width: 90%;
+    max-width: 600px;
+    height: 200px;
+    background-color: #222222;
+    margin: 20px auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
-
-    border: 1px solid black;
+    border-radius: 15px;
 }
 .profilePictureWrapper{
     display: flex;
@@ -140,22 +298,17 @@ header img{
     object-position: center;
 }
 .profileTextWrapper{
-    margin-top: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-.profileTextWrapper p{
     font-size: 1.2rem;
 }
 /************  ADD POST ***************/
 .addPostWrapper{
-    margin: 0 auto;
+    width: 90%;
     max-width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    font-size: 1.2rem;
-    border: 1px solid #000000;
+    height: 200px;
+    background-color: #222222;
+    margin: 20px auto;
+    display: flex;
+    border-radius: 15px;
 }
 .addPostWrapper h2{
     width: 80%;
@@ -275,34 +428,4 @@ header img{
     width: 100px;
     border: 1px solid black;
     font-size: 1.2rem;
-}
-/**************************************/
-/**************************************/
-/************  SIGN UP  ***************/
-/**************************************/
-/**************************************/
-.signUpWrapper{
-    width: 80%;
-    max-width: 400px;
-    margin: 1rem auto;
-    font-size: 1rem;
-}
-.signUpWrapper form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.3rem;
-}
-.signUpWrapper form div{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.signUpWrapper form div input{
-    width: 60%;
-    height: 2rem;
-}
-.signUpWrapper button{
-    width: 120px;
 }
