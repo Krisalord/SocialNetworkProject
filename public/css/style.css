@@ -12,25 +12,45 @@ body{
 }
 a:link{
     text-decoration: none;
+    color: black;
 }
 a:visited{
     text-decoration: none;
+    color: black;
 }
 a:hover{
     text-decoration: none;
+    color: black;
 }
 a:active{
     text-decoration: underline;
+    color: black;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 /**************************************/
 /**************************************/
 /************  FOR REUSE  *************/
 /**************************************/
 /**************************************/
-.flexToCenter{
+.btn{
+    height: 35px;
+    width: 95px;
+    font-size: 1rem;
+    transition-duration: 0.4s;
+    border: none;
+    background-color: #555555;
+    color: white;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+.btn:hover{
+    background-color: #333333;
+    color: white;
 }
 /**************************************/
 /**************************************/
@@ -45,7 +65,6 @@ header{
     align-items: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.15);
-    
 }
 header div{
     display: flex;
@@ -61,24 +80,229 @@ header img{
 }
 /**************************************/
 /**************************************/
-/**************  INDEX   **************/
+/**************  INDEX  ***************/
 /**************************************/
 /**************************************/
 .indexWrapper{
     height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.indexWrapper span{
-    font-size: 2rem;
-    border: 2px solid black;
-    transition-duration: 0.4s;
-    padding: 15px;
-    margin: 10px;
+.indexWrapper a{
+    margin: 0 2rem;
 }
-.indexWrapper span:hover{
-    background-color: #555555;
-    color: white;
+/**************************************/
+/**************************************/
+/**************  LOGIN  ***************/
+/**************************************/
+/**************************************/
+.loginWrapper section form{
+    height: 350px;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 1rem;
 }
-a span{
-    color: #555555;
-    font-size: 24px;
+.loginWrapper section form div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+/**************************************/
+/**************************************/
+/************  PROFILE  ***************/
+/**************************************/
+/**************************************/
+/***********  PROFILE INFO ************/
+.profileInfoWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border: 1px solid black;
+}
+.profilePictureWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profilePictureWrapper img{
+    max-width: 180%;
+    max-height: 180%;
+    object-fit: cover;
+    object-position: center;
+}
+.profileTextWrapper{
+    margin-top: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.profileTextWrapper p{
+    font-size: 1.2rem;
+}
+/************  ADD POST ***************/
+.addPostWrapper{
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 1.2rem;
+    border: 1px solid #000000;
+}
+.addPostWrapper h2{
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.addPostWrapper form{
+    text-align: center;
+}
+.addPostWrapper form div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.addPostWrapper input[type="text"]{
+    width: 80%;
+    max-width: 400px;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+.addPostWrapper textarea{
+    width: 80%;
+    max-width: 400px;
+    font-size: 1.2rem;
+    resize: none;
+    margin-top: 0.5rem;
+}
+.addPostWrapper form div{
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+/************  MY POSTS  **************/
+.myPostsWrapper{
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.myPostsImg{
+    width: 100%;
+    height: auto;
+}
+/*********  RETURN TO FEED ************/
+.returnToFeed{
+    width: 100%;
+}
+.returnToFeed span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    text-align: center;
+}
+/**************************************/
+/**************************************/
+/**************  FEED  ****************/
+/**************************************/
+/**************************************/
+.feedWrapper{
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.feedWrapper img{
+    max-width: 100%;
+    height: auto;
+}
+.feedPostTitle{
+    font-size: 1.3rem;
+}
+.feedWrapper li{
+    border: 1px solid black;
+    margin: 1rem 0;
+}
+/**************************************/
+/**************************************/
+/**************  POST  ****************/
+/**************************************/
+/**************************************/
+.postInfoWrapper{
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+.postInfoWrapper img{
+    max-width: 100%;
+    height: auto;
+}
+.postInfoWrapper div{
+    display: flex;
+    justify-content: space-between;
+}
+/***********  ADD COMMENT  ************/
+.addCommentWrapper{
+    width: 80%;
+    max-width: 400px;
+    margin: 1rem auto;
+}
+/**********  LIST COMMENTS  ***********/
+.commentListWrapper{
+    width: 80%;
+    max-width: 400px;
+    margin: 1rem auto;
+}
+/************  POST BTNS  *************/
+.postBtns{
+    text-align: center;
+}
+.postBtns a{
+    height: 35px;
+    width: 100px;
+    border: 1px solid black;
+    font-size: 1.2rem;
+}
+/**************************************/
+/**************************************/
+/************  SIGN UP  ***************/
+/**************************************/
+/**************************************/
+.signUpWrapper{
+    width: 80%;
+    max-width: 400px;
+    margin: 1rem auto;
+    font-size: 1rem;
+}
+.signUpWrapper form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+}
+.signUpWrapper form div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.signUpWrapper form div input{
+    width: 60%;
+    height: 2rem;
+}
+.signUpWrapper button{
+    width: 120px;
 }

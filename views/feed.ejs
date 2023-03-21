@@ -1,15 +1,16 @@
-<% include('partials/header') -%>
-    <div>
-        <div>
-            <ul>
-                <% for(let i = 0; i < posts.lenght; i+0){ %>
-                    <li>
-                        <a href='/post/<%=posts[i]._id%>'>
-                            <img src='<%= posts[i].image%>'>
-                        </a>
-                    </li>
-                <% } %>
-            </ul>
-        </div>
-    </div>
+<%- include('partials/header') -%>
+
+<div class='feedWrapper'>
+    <ul>
+        <% for(let i = 0; i < posts.length; i++){ %>
+            <li>
+                <span class='feedPostTitle'><%=posts[i].title%></span>
+                <a href='/post/<%=posts[i]._id%>'>
+                    <img src='<%= posts[i].image%>'>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+</div>
+
 <%- include('partials/footer') -%>

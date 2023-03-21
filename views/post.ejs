@@ -1,45 +1,41 @@
-<%- inclide('partials/header') -%>
-<div>
-    <div>
-        <div>
-            <h2><%= post.title %></h2>
-            <img src='<%= post.image%>'>
-            <div>
-                <form action='/post/likeP/<%= post.id %>?_method=PUT' method='POST'>
-                    <button type='submit'></button>
-                </form>
-                <h3>Likes: <%= post.likes %></h3>
-                <% if(post.user == user.id){ %>
-                <form action='/post/deletePost/<%= post.id %>?_method=DELETE' method='POST'>
-                    <button type='submit'></button>
-                </form>
-                <% } %>
-            </div>
-        </div>
-        <div>
-            <p><%= post.caption %></p>
-        </div>
-        <div>
-            <h2>Add a comment</h2>
-            <form action='/comment/createComment/<%= post._id %>' method='POST'>
-                <div>
-                    <label for='comment'>Comment</label>
-                    <input type='text' id='comment' name='comment'>
-                </div>
-                <button type='submit'>Submit</button>
-            </form>
-        </div>
-        <ul>
-            <% for(let i = 0; i < comment.length; i++){ %>
-                <li>
-                    <%= comments[i].comment %>
-                </li>
-        </ul>
-        <div>
-            <a href='/profile'>Return to Profile</a>
-            <a href='/feed'>Return to Feed</a>
-        </div>
+<%- include('partials/header') -%>
+
+<div class='postInfoWrapper'>
+    <h2><%= post.title %></h2>
+    <img src='<%= post.image%>'>
+    <p><%= post.caption %></p>
+    <div class='likesDel'>
+        <form action='/post/likePost/<%= post.id %>?_method=PUT' method='POST'>
+            <button type='submit'>Like!</button>
+        </form>
+        <h3>Likes: <%= post.likes %></h3>
+        <% if(post.user == user.id){ %>
+        <form action='/post/deletePost/<%= post.id %>?_method=DELETE' method='POST'>
+            <button type='submit'>Delete</button>
+        </form>
+        <% } %>
     </div>
+</div>
+<div class='addCommentWrapper'>
+    <h2>Add a comment</h2>
+    <form action='/comment/createComment/<%= post._id %>' method='POST'>
+        <div>
+            <label for='comment'>Comment</label>
+            <input type='text' id='comment' name='comment'>
+        </div>
+        <button type='submit'>Submit</button>
+    </form>
+</div>
+<ul class='commentListWrapper'>
+    <% for(let i = 0; i < comments.length; i++){ %>
+        <li>
+            <%= comments[i].comment %>
+        </li>
+    <% } %>
+</ul>
+<div class='postBtns'>
+    <a href='/profile'>Return to Profile</a>
+    <a href='/feed'>Return to Feed</a>
 </div>
 
 <%- include('partials/footer') -%>
