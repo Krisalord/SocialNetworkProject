@@ -2,40 +2,46 @@
 
 <div class='postInfoWrapper'>
     <h2><%= post.title %></h2>
-    <img src='<%= post.image%>'>
-    <p><%= post.caption %></p>
-    <div class='likesDel'>
-        <form action='/post/likePost/<%= post.id %>?_method=PUT' method='POST'>
-            <button type='submit'>Like!</button>
-        </form>
-        <h3>Likes: <%= post.likes %></h3>
+    <img src='<%= post.image%>' class='postImage'>
+
+    <div class='likes_delete'>
+        <div class='likes'>
+            <form action='/post/likePost/<%= post.id %>?_method=PUT' method='POST'>
+                <button type='submit' class='likeBtn'></button>
+            </form>
+            <h2><%= post.likes %></h2>
+        </div>
         <% if(post.user == user.id){ %>
         <form action='/post/deletePost/<%= post.id %>?_method=DELETE' method='POST'>
-            <button type='submit'>Delete</button>
+            <button type='submit' class='trashBtn'></button>
         </form>
         <% } %>
     </div>
+    <div class='caption'>
+        <p><%= post.caption %></p>
+    </div>
 </div>
+
 <div class='addCommentWrapper'>
-    <h2>Add a comment</h2>
-    <form action='/comment/createComment/<%= post._id %>' method='POST'>
-        <div>
-            <label for='comment'>Comment</label>
-            <input type='text' id='comment' name='comment'>
-        </div>
+    <form action='/comment/createComment/<%= post._id %>' method='POST' class='commentForm'>
+        <h2>Add a comment</h2>
+        <textarea id='comment' name='comment' placeholder='Your comment' maxlength='32'></textarea>
         <button type='submit'>Submit</button>
     </form>
 </div>
+
 <ul class='commentListWrapper'>
     <% for(let i = 0; i < comments.length; i++){ %>
         <li>
-            <%= comments[i].comment %>
+            <p>Commenter ID</p>
+            <div></div>
+            <p><%= comments[i].comment %></p>
         </li>
     <% } %>
 </ul>
-<div class='postBtns'>
-    <a href='/profile'>Return to Profile</a>
-    <a href='/feed'>Return to Feed</a>
-</div>
+
+<p><a href='/profile' class='postBtmBtns'>Return to Profile</a></p>
+<p><a href='/feed' class='postBtmBtns'>Return to Feed</a></p>
+
 
 <%- include('partials/footer') -%>

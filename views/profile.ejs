@@ -13,27 +13,29 @@
 	
 	<div class='addPostWrapper'>
 		<form action="/post/createPost" enctype="multipart/form-data" method="POST">
-			<h2>Add a post</h2>
+			<h1>Add a post</h1>
 			<input type="text" id="title" name="title" placeholder="Title">
-			<textarea id="caption" name="caption" placeholder="Caption"></textarea>
-			<div>
+			<textarea id="caption" name="caption" placeholder="Caption" maxlength="64"></textarea>
+			<button id='selectFile'>Select File
 				<input type="file" id="imageUpload" name="file">
-			</div>
+			</button>
 			<button type="submit" value="Upload">Submit</button>
 		</form>
 	</div>
-
+	
 	<div class='myPostsWrapper'>
+		<h1>My Posts</h1>
 		<ul>
 			<% for(var i=0; i<posts.length; i++) {%>
 				<li>
+					<h2><%=posts[i].title %></h2>
 					<a href="/post/<%=posts[i]._id%>"><img src="<%= posts[i].image%>" class='myPostsImg'></a>
 				</li>
 			<% } %>
 		</ul>
 	</div>
 	<div class='returnToFeed'>
-		<span><a href="/feed">Return to Feed</a></span>
+		<a href="/feed"><span>Return to Feed</span></a>
 	</div>
 
 

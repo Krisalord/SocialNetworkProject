@@ -3,13 +3,6 @@
 <div class='signupWrapper'>
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
-            <script>
-                alert("<%= el.msg %>");
-            </script>
-        <% }) %>    
-    <% } %>
-    <!-- <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
             <div><%= el.msg %></div>
         <% }) %>    
     <% } %>
@@ -17,7 +10,7 @@
         <% messages.info.forEach( el => { %>
             <div><%= el.msg %></div>
         <% }) %>    
-    <% } %> -->
+    <% } %>
     <form action="/signup" method="POST" class='mainSignupBox'>
         <img src='/images/logoWhite.png'>
         <span class='signupSpan'>Sign Up to KLapp</span>
