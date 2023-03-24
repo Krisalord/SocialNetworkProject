@@ -1,12 +1,15 @@
 const cloudinary = require('../middleware/cloudinary')
 const Post = require('../models/Post')
 const Comment = require('../models/Comment')
+const User = require('../models/User')
 
 module.exports = {
     getProfile: async(req, res)=>{
         try{
+            //users - all users from DB to friend list (to be changed)
+            const users = await User.find()
             const posts = await Post.find({user: req.user.id})
-            res.render('profile.ejs', {posts: posts, user: req.user})
+            res.render('profile.ejs', {posts: posts, user: req.user, users: users})
         }catch(err){
             console.log(err)
         }

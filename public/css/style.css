@@ -11,6 +11,7 @@ body{
     font-size: 62.5%;
     background-color: #141414;
     color: #F5F5F5;
+    min-width: 300px;
 }
 ul{
     list-style: none;
@@ -272,13 +273,27 @@ a{
 .profileInfoWrapper{
     width: 90%;
     max-width: 600px;
-    height: 200px;
+    height: 300px;
     background-color: #222222;
     margin: 20px auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     border-radius: 15px;
+    padding: 15px;
+}
+/* Box with pfp and btns to change it */
+.pfpDivider{
+    height: 100%;
+    width: 40%;
+}
+/* pfp css */
+.pfpBox{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .profilePictureWrapper{
     display: flex;
@@ -290,13 +305,118 @@ a{
     overflow: hidden;
 }
 .profilePictureWrapper img{
-    max-width: 180%;
-    max-height: 180%;
+    max-width: 140%;
+    max-height: 140%;
     object-fit: cover;
     object-position: center;
 }
-.profileTextWrapper{
+/* btns to change pfp css */
+.pfpBtns{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pfpBtns form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+/************  ADD PFP ****************/
+#selectPicture{
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 1.1rem;
+}
+#pfpUpload{
+    height: 40px;
+    width: 100px;
+    opacity: 0;
+    position: absolute;
+}
+#subPfp{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    background-image: url('/images/check.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Box with text about profile */
+.textDivider{
+    height: 100%;
+    width: 60%;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     font-size: 1.2rem;
+}
+.profileInfoDivider{
+    border-bottom: 1px solid #F5F5F5;
+    height: 0px;
+    width: 100%;
+    opacity: 60%;
+}
+/************  FRIENDS ****************/
+.friendsWrapper{
+    width: 90%;
+    max-width: 600px;
+    padding: 25px;
+    background-color: #222222;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+.friendsWrapper h2{
+    font-size: 1.1rem;
+}
+/* Box with list of friends */
+.friendList{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
+}
+.friendBox{
+    text-align: center;
+}
+.friendPicture{
+    height: 120px;
+    width: 120px;
+    padding: 15px;
+    border-radius: 50%;
+}
+#message{
+    height: 40px;
+    width: 140px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 1.1rem;
 }
 /************  ADD POST ***************/
 .addPostWrapper{

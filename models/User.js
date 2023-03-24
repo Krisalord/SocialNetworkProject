@@ -4,8 +4,22 @@ const mongoose = require('mongoose')
 
 //create new mongoose schema, contains the fields that will be in the user model
 const UserSchema = new mongoose.Schema({
-    userName: { type: String, unique: true },
-    email: { type: String, unique: true },
+    userName:{
+        type: String,
+        unique: true 
+    },
+    email:{
+        type: String,
+        unique: true
+    },
+    profilePic:{
+        type: String,
+        require: false
+    },
+    cloudinaryId:{
+        type: String,
+        required: false
+    },
     password: String,
 })
 

@@ -1,15 +1,47 @@
 <%- include('partials/headerAuth') -%>
 
+
 	<div class='profileInfoWrapper'>
-		<div class='profilePictureWrapper'>
-			<img src='/images/pfpPlaceholder.jpg'>
+		<div class='pfpDivider'>
+			<div class='pfpBox'>
+				<div class='profilePictureWrapper'>
+					<img src="<%= user.profilePic%>" class='pfp'>
+				</div>
+			</div>
+			
+			<div class='pfpBtns'>
+				<form action="/addPfp" enctype="multipart/form-data" method="POST">
+					<button id='selectPicture'>Change
+						<input type="file" id="pfpUpload" name="file">
+					</button>
+					<button type="submit" value="Upload" id="subPfp"></button>
+				</form>
+			</div>
 		</div>
-		<div class='profileTextWrapper'>
-			<span><%= user.userName %></span>
-			<br>
-			<span><%= user.email %></span>
+		<div class='textDivider'>
+			<div class='profileTextWrapper'>
+				<span><%= user.userName %></span>
+			</div>
+			<div class="profileInfoDivider"></div>
+			<span>Email: <%= user.email %></span>
 		</div>
 	</div>
+
+	<div class='friendsWrapper'>
+		<h1>Friends</h1>
+		<div class="friendList">
+			<% for(var i=0; i<users.length; i++) {%>
+				<div class="friendBox">
+					<h2><%=users[i].userName %></h2>
+					<a href="/profile/<%=users[i]._id%>"><img src="<%= users[i].profilePic%>" class='friendPicture'></a>
+				</div>
+			<% } %>
+		</div>
+	</div>
+
+
+		
+	
 	
 	<div class='addPostWrapper'>
 		<form action="/post/createPost" enctype="multipart/form-data" method="POST">

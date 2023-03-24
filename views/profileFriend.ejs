@@ -1,0 +1,52 @@
+<%- include('partials/headerAuth') -%>
+
+
+	<div class='profileInfoWrapper'>
+		<div class='pfpDivider'>
+			<div class='pfpBox'>
+				<div class='profilePictureWrapper'>
+					<img src="<%= user.profilePic%>" class='pfp'>
+				</div>
+			</div>
+
+			<div class='pfpBtns'>
+				<a href="/profile/chat"><div id="message">Message</div></a>
+			</div>
+		</div>
+		<div class='textDivider'>
+			<div class='profileTextWrapper'>
+				<span><%= user.userName %></span>
+			</div>
+			<div class="profileInfoDivider"></div>
+			<span>Email: <%= user.email %></span>
+		</div>
+	</div>
+
+	<div class='friendsWrapper'>
+		<h1>Friends</h1>
+		<div class="friendList">
+			<% for(var i=0; i<users.length; i++) {%>
+				<div class="friendBox">
+					<h2><%=users[i].userName %></h2>
+					<a href="/profile/<%=users[i]._id%>"><img src="<%= users[i].profilePic%>" class='friendPicture'></a>
+				</div>
+			<% } %>
+		</div>
+	</div>
+	
+	<div class='myPostsWrapper'>
+		<h1>Friends Posts</h1>
+		<ul>
+			<% for(var i=0; i<posts.length; i++) {%>
+				<li>
+					<h2><%=posts[i].title %></h2>
+					<a href="/post/<%=posts[i]._id%>"><img src="<%= posts[i].image%>" class='myPostsImg'></a>
+				</li>
+			<% } %>
+		</ul>
+	</div>
+	<div class='returnToFeed'>
+		<a href="/feed"><span>Return to Feed</span></a>
+	</div>
+
+<%- include('partials/footer') -%>
