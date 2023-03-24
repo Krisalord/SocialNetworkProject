@@ -6,10 +6,14 @@
 
     <div class='likes_delete'>
         <div class='likes'>
-            <form action='/post/likePost/<%= post.id %>?_method=PUT' method='POST'>
-                <button type='submit' class='likeBtn'></button>
-            </form>
-            <h2><%= post.likes %></h2>
+            <% if(post.usersLiked.includes(user.id)){ %>
+                <h2 class="likeBtn"></h2>
+            <% } else { %>
+                <form action='/post/likePost/<%= post.id %>?_method=PUT' method='POST'>
+                    <button type='submit' class='likeBtn'></button>
+                </form>
+            <% } %>
+            <h2 class="likeCount"><%= post.likes %></h2>
         </div>
         <% if(post.user == user.id){ %>
         <form action='/post/deletePost/<%= post.id %>?_method=DELETE' method='POST'>
@@ -33,15 +37,31 @@
 <ul class='commentListWrapper'>
     <% for(let i = 0; i < comments.length; i++){ %>
         <li>
-            <p>Commenter ID</p>
-            <div></div>
+            <p><%= comments[i].userCreated %></p>
+            <div class="divider"></div>
             <p><%= comments[i].comment %></p>
+            <div class="likes_delete">
+                <div class="likes">
+                    <% if(comments[i].usersLiked.includes(user.id)){ %>
+                        <h5 class="likeBtn"></h5>
+                    <% } else { %>
+                        <form action='/comment/likeComment/<%= comments[i]._id %>?_method=PUT' method='POST'>
+                            <button type='submit' class='likeBtn'></button>
+                        </form>
+                    <% } %>
+                        <h2 class="likeCount"><%= comments[i].likes %></h2>
+                </div>
+                <% if(comments[i].userCreated == user.userName){ %>
+                    <form action='/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE' method='POST'>
+                        <button type='submit' class='trashBtn'></button>
+                    </form>
+                <% } %>
+            </div>
         </li>
     <% } %>
 </ul>
 
 <p><a href='/profile' class='postBtmBtns'>Return to Profile</a></p>
 <p><a href='/feed' class='postBtmBtns'>Return to Feed</a></p>
-
 
 <%- include('partials/footer') -%>

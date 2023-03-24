@@ -1,12 +1,7 @@
 <%- include('partials/headerNoAuth') -%>
 
 <div class='loginWrapper'>
-    <% if(locals.messages.errors){ %> <% messages.errors.forEach(el => { %>
-    <div><%= el.msg %></div>
-    <% }) %> <% } %> <% if (locals.messages.info) { %> 
-    <% messages.info.forEach(el => { %>
-    <div><%= el.msg %></div>
-    <% }) %> <% } %>
+    
     <form action='/login' method='POST' class='mainLoginBox'>
         <img src='/images/logoWhite.png'>
         <span class='logInSpan'>Sign In to KLapp</span>
@@ -17,6 +12,12 @@
             <input type='password' id='exampleInputPassword1' name='password' placeholder='Password'>
         </div>
         <button type='submit'>Submit</button>
+        <% if(locals.messages.errors){ %> <% messages.errors.forEach(el => { %>
+            <div><%= el.msg %></div>
+            <% }) %> <% } %> <% if (locals.messages.info) { %> 
+            <% messages.info.forEach(el => { %>
+            <div><%= el.msg %></div>
+        <% }) %> <% } %>
     </form>
 </div>
 

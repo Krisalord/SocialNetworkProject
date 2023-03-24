@@ -508,13 +508,13 @@ a{
     background-size: cover;
     border: none;
 }
-.likes_delete  .likes{
+.likes_delete .likes{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
 }
-.likes_delete h2{
+.likeCount{
     font-size: 1.1rem;
     color: #4c5699;
 }
@@ -600,7 +600,7 @@ a{
 .commentListWrapper li p:first-child{
     font-size: 1.2rem;
 }
-.commentListWrapper li div{
+.commentListWrapper li .divider{
     width: 100%;
     border-bottom: 1px solid #F5F5F5;
     opacity: 70%;
@@ -608,6 +608,11 @@ a{
 }
 .commentListWrapper li p:last-child{
     font-size: 1rem;
+}
+.likeCommentBox{
+    display: flex;
+    align-items: center;
+    
 }
 /* return to feed/profile btns */
 .postBtmBtns{
