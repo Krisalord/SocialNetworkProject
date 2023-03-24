@@ -39,6 +39,7 @@ module.exports = {
                 caption: req.body.caption,
                 likes: 0,
                 user: req.user.id,
+                usersLiked: "",
             })
             console.log('Post has been created!')
             res.redirect('/profile')
@@ -48,7 +49,7 @@ module.exports = {
     },
     likePost: async(req, res)=>{
         try{
-            await Post.findOneAndUpdate({_id: req.params.id},{$inc:{likes: 1}})
+            await Post.findOneAndUpdate({_id: req.params.id},{$inc:{likes: 1},$push:{usersLiked: req.user.id}})
             console.log('Likes +1!')
             res.redirect(`/post/${req.params.id}`)
         }catch(err){
@@ -58,6 +59,9 @@ module.exports = {
     deletePost: async(req, res)=>{
         try{
             let post = await Post.findById({_id: req.params.id})
+            // delete all comments related to the post
+            await Comment.deleteMany({post: post._id})
+            // delete cloudinary image
             await cloudinary.uploader.destroy(post.cloudinaryId)
             await Post.remove({_id: req.params.id})
             console.log('Deleted Post')
