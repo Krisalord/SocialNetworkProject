@@ -24,7 +24,7 @@ module.exports = {
     getFriendProfile: async(req, res)=>{
         try{
             //users - all users from DB to friend list (to be changed)
-            const users = await User.find()
+            const users = await User.find({_id: {$ne: req.user._id}})
             const user = await User.findById(req.params.id)
             const posts = await Post.find({user: user.id})
             res.render('profileFriend.ejs', {posts: posts, user: user, users: users})
@@ -34,9 +34,12 @@ module.exports = {
     },
     getChat: async(req, res)=>{
         try{
+            //console.log(req)
             // Retrieve user IDs from URL parameters
             const currentUserID = req.user.id;
-            const otherUserID = req.params.id;
+            const pickedUserID = req.params.id;
+            console.log(pickedUserID)
+            console.log(currentUserID)
         }catch(err){
             console.log(err)
         }

@@ -7,7 +7,7 @@ module.exports = {
     getProfile: async(req, res)=>{
         try{
             //users - all users from DB to friend list (to be changed)
-            const users = await User.find()
+            const users = await User.find({_id: {$ne: req.user._id}})
             const posts = await Post.find({user: req.user.id})
             res.render('profile.ejs', {posts: posts, user: req.user, users: users})
         }catch(err){
