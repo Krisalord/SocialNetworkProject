@@ -22,5 +22,7 @@ router.post('/addPfp', upload.single("file"), profileController.uploadPic)
 router.get('/profile/:id', profileController.getFriendProfile)
 //link for chat
 router.get('/chat/:id', profileController.getChat)
+//send message
+router.post('/chat/sendMessage/:id', profileController.sendMessage)
 
 module.exports = router
