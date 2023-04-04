@@ -6,6 +6,7 @@
         <% for(let i = 0; i < posts.length; i++){ %>
             <li>
                 <h2><%=posts[i].title%></h2>
+                <p style="font-size: 1.2rem;">Made By: <%= posts[i].user.userName%></p>
                 <a href='/post/<%=posts[i]._id%>'>
                     <img src='<%= posts[i].image%>'>
                 </a>
