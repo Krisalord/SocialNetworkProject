@@ -2,6 +2,7 @@
 
 <div class='postInfoWrapper'>
     <h2><%= post.title %></h2>
+    <p>Post by: <%= userCreated.userName %></p>
     <img src='<%= post.image%>' class='postImage'>
 
     <div class='likes_delete'>
@@ -37,23 +38,26 @@
 <ul class='commentListWrapper'>
     <% for(let i = 0; i < comments.length; i++){ %>
         <li>
-            <p><%= comments[i].userCreated %></p>
+            <div class="pfp_name">
+                <img src="<%= user.profilePic%>" class="commenterPfp">
+                <p><%= comments[i].userCreated %></p>
+            </div>
             <div class="divider"></div>
             <p><%= comments[i].comment %></p>
-            <div class="likes_delete">
-                <div class="likes">
+            <div class="comment_likes_delete">
+                <div class="comment_likes">
                     <% if(comments[i].usersLiked.includes(user.id)){ %>
-                        <h5 class="likeBtn"></h5>
+                        <h5 class="comment_likeBtn"></h5>
                     <% } else { %>
                         <form action='/comment/likeComment/<%= comments[i]._id %>?_method=PUT' method='POST'>
-                            <button type='submit' class='likeBtn'></button>
+                            <button type='submit' class='comment_likeBtn'></button>
                         </form>
                     <% } %>
-                        <h2 class="likeCount"><%= comments[i].likes %></h2>
+                        <h2 class="comment_likeCount"><%= comments[i].likes %></h2>
                 </div>
                 <% if(comments[i].userCreated == user.userName){ %>
                     <form action='/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE' method='POST'>
-                        <button type='submit' class='trashBtn'></button>
+                        <button type='submit' class='comment_trashBtn'></button>
                     </form>
                 <% } %>
             </div>

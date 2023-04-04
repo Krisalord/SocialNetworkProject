@@ -657,6 +657,7 @@ a{
     font-size: 1.3rem;
 }
 /* Wrapper for "add comment" */
+/* Wrapper for "add comment" */
 .addCommentWrapper{
     width: 90%;
     max-width: 600px;
@@ -709,7 +710,7 @@ a{
 .commentListWrapper li{
     width: 100%;
     font-size: 1.2rem;
-    padding: 15px;
+    padding: 10px;
     resize: none;
     border: none;
     border-radius: 10px;
@@ -717,22 +718,60 @@ a{
     color: #F5F5F5;
     margin: 0.4rem 0;
 }
-.commentListWrapper li p:first-child{
-    font-size: 1.2rem;
-}
 .commentListWrapper li .divider{
     width: 100%;
     border-bottom: 1px solid #F5F5F5;
     opacity: 70%;
     margin: 0.2rem 0;
 }
-.commentListWrapper li p:last-child{
-    font-size: 1rem;
+/* wrapper for comment likes and delete div */
+.comment_likes_delete{
+    width: 100%;
+    background-color: #333333;
+    margin: 1px auto;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
 }
-.likeCommentBox{
+.comment_likeBtn{
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    background-image: url('/images/like.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+}
+.comment_likes_delete .comment_likes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.comment_likeCount{
+    font-size: 1.1rem;
+    color: #4c5699;
+}
+.comment_trashBtn{
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    background-image: url('/images/trash.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+}
+.pfp_name{
     display: flex;
     align-items: center;
-    
+    gap: 5px;
+}
+.commenterPfp{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
 }
 /* return to feed/profile btns */
 .postBtmBtns{
