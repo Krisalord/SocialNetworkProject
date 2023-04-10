@@ -583,37 +583,54 @@ a{
     align-items: center;
     padding: 15px;
 }
-.feedWrapper .postImg{
+/* information about poster */
+.feed_info{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 5px;
+}
+.feed_info p:first-child{
+    font-size: 1.2rem;
+}
+.feed_info p:last-child{
+    opacity: 70%;
+}
+/* image */
+.feedImg{
     width: 100%;
     height: auto;
     margin-top: 10px;
     border-radius: 15px;
 }
-.postHeader{
+/* like button */
+.feed_likes{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin: 5px 0;
 }
-.postMadeBy{
+.feed_likebox{
+    width: 80px;
     display: flex;
+    color: white;
     align-items: center;
-    gap: 5px;
+    font-size: 1.1rem;
+    background-color: #333333;
+    border-radius: 30px;
+    gap: 15px;
 }
-.madeDate{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 1rem;
-    opacity: 70%;
+.feed_likeimg{
+    height: 30px;
+    width: 30px;
 }
-.title_caption{
+/* post caption */
+.feed_caption{
     width: 100%;
 }
-.likes_post{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+.feed_caption span:first-child{
+    font-size: 1.1rem;
+}
+.feed_caption span:last-child{
+    opacity: 80%;
 }
 /**************************************/
 /**************************************/
