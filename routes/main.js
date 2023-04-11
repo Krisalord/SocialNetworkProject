@@ -20,9 +20,5 @@ router.post("/signup", authController.postSignup)
 router.post('/addPfp', upload.single("file"), profileController.uploadPic)
 //profile of another user
 router.get('/profile/:id', profileController.getFriendProfile)
-//link for chat
-router.get('/chat/:id', profileController.getChat)
-//send message
-router.post('/chat/sendMessage/:id', profileController.sendMessage)
 
 module.exports = router
