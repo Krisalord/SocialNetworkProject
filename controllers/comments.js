@@ -9,6 +9,7 @@ module.exports = {
                 likes: 0,
                 post: req.params.id,
                 userCreated: req.user.userName,
+                user: req.user.id,
                 usersLiked: "",
             })
         console.log("Comment has been added!")

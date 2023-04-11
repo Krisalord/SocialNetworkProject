@@ -1,0 +1,190 @@
+/**************************************/
+/**************************************/
+/**************  INDEX  ***************/
+/**************************************/
+/**************************************/
+/* main wrapper for the page */
+.indexWrapper{
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+/* colored box with login/reg */
+.mainIndexBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 340px;
+    width: 300px;
+    padding: 24px;
+    background-color: #222222;
+    border-radius: 15px;
+}
+/* Logo */
+.mainIndexBox img{
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+}
+/* text after logo */
+.mainIndexBox .signInSpan{
+    font-size: 1.5rem;
+    color: #F5F5F5;
+}
+/* button for login */
+.signInBtn{
+    height: 40px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signInBtn span{
+    font-size: 1.2rem;
+}
+/* breaker */
+.indexOr{
+    font-size: 1rem;
+    opacity: 55%;
+}
+/* reg button */
+.signUpBtn{
+    height: 40px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #4c5699;
+    color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signUpBtn span{
+    font-size: 1.2rem;
+}
+/**************************************/
+/**************************************/
+/**************  LOGIN  ***************/
+/**************************************/
+/**************************************/
+.loginWrapper{
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.mainLoginBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 340px;
+    width: 300px;
+    padding: 24px;
+    background-color: #222222;
+    border-radius: 15px;
+}
+/* Logo */
+.mainLoginBox img{
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+}
+/* text after logo */
+.mainLoginBox .logInSpan{
+    font-size: 1.5rem;
+    color: #F5F5F5;
+}
+/* button for login */
+.mainLoginBox button{
+    height: 40px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+/* Text boxes for email/password */
+.mainLoginBox input{
+    height: 40px;
+    width: 240px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #333333;
+    color: #F5F5F5;
+}
+.mainLoginBox input:focus{
+    outline: none;
+    border: 3px solid #4c5699;
+}
+/**************************************/
+/**************************************/
+/************  SIGN UP  ***************/
+/**************************************/
+/**************************************/
+.signupWrapper{
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.mainSignupBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 480px;
+    width: 300px;
+    padding: 24px;
+    background-color: #222222;
+    border-radius: 15px;
+}
+/* Logo */
+.mainSignupBox img{
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+}
+/* text after logo */
+.mainSignupBox .signupSpan{
+    font-size: 1.5rem;
+    color: #F5F5F5;
+}
+/* button for signUp */
+.mainSignupBox button{
+    height: 40px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #4c5699;
+    color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+/* Text boxes for email/password */
+.mainSignupBox input{
+    height: 40px;
+    width: 240px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #333333;
+    color: #F5F5F5;
+}
+.mainSignupBox input:focus{
+    outline: none;
+    border: 3px solid #4c5699;
+}
+#emailHelp{
+    font-size: 1.2rem;
+    text-align: center;
+}

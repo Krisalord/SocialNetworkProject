@@ -8,7 +8,7 @@ module.exports = {
         try{
             //users - all users from DB to friend list (to be changed)
             const users = await User.find({_id: {$ne: req.user._id}})
-            const posts = await Post.find({user: req.user.id})
+            const posts = await Post.find({user: req.user.id}).populate('user', ['userName', 'profilePic'])
             res.render('profile.ejs', {posts: posts, user: req.user, users: users})
         }catch(err){
             console.log(err)
@@ -25,9 +25,10 @@ module.exports = {
     getPost: async(req, res)=>{
         try{
             const post = await Post.findById(req.params.id)
-            const comments = await Comment.find({post: req.params.id}).sort({createdAt: 'desc'}).lean()
+            const comments = await Comment.find({post: req.params.id}).sort({createdAt: 'desc'}).populate('user', 'profilePic').lean()
             const userCreated = await User.findById(post.user)
             res.render('post.ejs', {post: post, user: req.user, comments: comments, userCreated: userCreated})
+            
         }catch(err){
             console.log(err)
         }
