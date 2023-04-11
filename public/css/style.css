@@ -144,7 +144,8 @@ a{
 /**************************************/
 /***********  PROFILE INFO ************/
 .profileInfoWrapper{
-    max-width: 600px;
+    max-width: 800px;
+    width: 100%;
     background-color: #222222;
     display: flex;
     justify-content: center;
@@ -169,6 +170,7 @@ a{
     overflow: hidden;
 }
 .profile_picture img{
+    max-width: 150px;
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: contain;
@@ -427,6 +429,8 @@ a{
     background-color: #222222;
     color: #F5F5F5;
     margin: 0.4rem 0;
+    display: flex;
+    align-items: flex-start;
 }
 /* return to feed/profile btns */
 .postBtmBtns{
