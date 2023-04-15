@@ -1,70 +1,87 @@
 <%- include('partials/headerAuth') -%>
 
-<div class='postInfoWrapper'>
-    <p>Post by: <%= userCreated.userName %></p>
-    <img src='<%= post.image%>' class='postImage'>
-
-    <div class='likes_delete'>
-        <div class='likes'>
-            <% if(post.usersLiked.includes(user.id)){ %>
-                <h2 class="likeBtn"></h2>
-            <% } else { %>
-                <form action='/post/likePost/<%= post.id %>?_method=PUT' method='POST'>
-                    <button type='submit' class='likeBtn'></button>
-                </form>
-            <% } %>
-            <h2 class="likeCount"><%= post.likes %></h2>
-        </div>
-        <% if(post.user == user.id){ %>
-        <form action='/post/deletePost/<%= post.id %>?_method=DELETE' method='POST'>
-            <button type='submit' class='trashBtn'></button>
-        </form>
-        <% } %>
-    </div>
-    <div class='caption'>
-        <p><%= post.caption %></p>
-    </div>
-</div>
-
-<div class='addCommentWrapper'>
-    <form action='/comment/createComment/<%= post._id %>' method='POST' class='commentForm'>
-        <h2>Add a comment</h2>
-        <textarea id='comment' name='comment' placeholder='Your comment' maxlength='32'></textarea>
-        <button type='submit'>Submit</button>
-    </form>
-</div>
-
-<ul class='commentListWrapper'>
-    <% for(let i = 0; i < comments.length; i++){ %>
-        <li>
-            <div class="pfp_name">
-                <img src="<%= user.profilePic%>" class="smallPfp">
-                <p><%= comments[i].userCreated %></p>
+<div class='wrapper_nobg'>
+    <div class="postSecondaryWrapper">
+        <!-- header of the current post with picture of the poster, name and date -->
+        <div class="post_info">
+            <img src="<%=userCreated.profilePic%>" class="smallPfp">
+            <div class="post_namedate">
+                <p><%=userCreated.userName%></p>
+                <p><%=post.createdAt.toLocaleDateString('en-US', {day: 'numeric', month: 'short', year: 'numeric'})%></p>
             </div>
-            <div class="divider"></div>
-            <p><%= comments[i].comment %></p>
-            <div class="comment_likes_delete">
-                <div class="comment_likes">
-                    <% if(comments[i].usersLiked.includes(user.id)){ %>
-                        <h5 class="comment_likeBtn"></h5>
-                    <% } else { %>
-                        <form action='/comment/likeComment/<%= comments[i]._id %>?_method=PUT' method='POST'>
-                            <button type='submit' class='comment_likeBtn'></button>
-                        </form>
-                    <% } %>
-                        <h2 class="comment_likeCount"><%= comments[i].likes %></h2>
-                </div>
-                <% if(comments[i].userCreated == user.userName){ %>
-                    <form action='/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE' method='POST'>
-                        <button type='submit' class='comment_trashBtn'></button>
+        </div>
+        <!-- image -->
+        <img src='<%= post.image%>' class='post_image'>
+        <!-- likes of the post -->
+        <div class="post_likes">
+                <% if(post.usersLiked.includes(user.id)){ %>
+                    <div class="post_likebox">
+                        <img src="/images/like.png" class="post_likeimg"><span><%=post.likes%></span>
+                    </div>
+                <% } else { %>
+                    <form action='/post/likePost/<%= post.id %>?_method=PUT' method='POST' class="post_likebox">
+                        <button type='submit' class="none_btn">
+                            <img src="/images/like.png" class="post_likeimg">
+                        </button>
+                        <span><%=post.likes%></span>
                     </form>
                 <% } %>
-            </div>
-        </li>
-    <% } %>
-</ul>
-
+                <% if(post.user == user.id){ %>
+                    <form action='/post/deletePost/<%= post.id %>?_method=DELETE' method='POST' class="post_deletebox">
+                        <button type='submit' class="none_btn"><img src="/images/trash.png" class="post_deleteimg"></button>
+                    </form>
+                <% } %>
+        </div>
+        <!-- caption of the post -->
+        <div class="post_caption">
+            <span><%=userCreated.userName%>: </span><span><%=post.caption%></span>
+        </div>
+        <!-- add comment box -->
+        <form action='/comment/createComment/<%= post._id %>' method='POST' class='comment_form'>
+            <textarea id='comment' name='comment' placeholder='Your comment' maxlength='144'></textarea>
+            <button type='submit'>Submit</button>
+        </form>
+        <!-- list of comments -->
+        <ul class="commentListWrapper">
+            <% for(let i = 0; i < comments.length; i++){ %>
+                <li>
+                    <div class="post_info">
+                        <img src="<%= comments[i].user.profilePic %>" class="smallPfp">
+                        <div class="post_namedate">
+                            <p><%=comments[i].userCreated %></p>
+                            <p><%=comments[i].createdAt.toLocaleDateString('en-US', {day: 'numeric', month: 'short', year: 'numeric'})%></p>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <p><%= comments[i].comment %></p>
+                    <!-- likes and delete comment -->
+                    <div class="post_likes">
+                        <% if(comments[i].usersLiked.includes(user.id)){ %>
+                            <div class="post_likebox">
+                                <img src="/images/like.png" class="post_likeimg"><span><%=comments[i].likes%></span>
+                            </div>
+                        <% } else { %>
+                            <form action='/comment/likeComment/<%= comments[i]._id %>?_method=PUT' method='POST' class="post_likebox">
+                                <button type='submit' class="none_btn">
+                                    <img src="/images/like.png" class="post_likeimg">
+                                </button>
+                                <span><%=comments[i].likes%></span>
+                            </form>
+                        <% } %>
+                        <% if(comments[i].userCreated == user.userName){ %>
+                            <form action='/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE' method='POST' class="post_deletebox">
+                                <button type='submit' class='none_btn'><img src="/images/trash.png" class="post_deleteimg"></button>
+                            </form>
+                        <% } %>
+                    </div>
+                </li>
+            <% } %>
+        </ul>          
+    </div>
+</div>
 <p><a href='/profile' class='postBtmBtns'>Return to Profile</a></p>
 <p><a href='/feed' class='postBtmBtns'>Return to Feed</a></p>
 
 <%- include('partials/footer') -%>
+
+

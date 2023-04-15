@@ -8,10 +8,9 @@
     margin: 0;
 }
 body{
-    font-size: 62.5%;
     background-color: #141414;
     color: #F5F5F5;
-    min-width: 300px;
+    min-width: 375px;
 }
 ul{
     list-style: none;
@@ -33,242 +32,107 @@ a{
     height: 50px;
     border-radius: 50%;
 }
-/**************************************/
-/**************************************/
-/**************  HEADER  **************/
-/**************************************/
-/**************************************/
-/***************  AUTH  ***************/
-.authHeaderWrapper{
-    height: 50px;
+/* general post design for feed/opened post/feed in "my profile" */
+/* information about poster */
+.post_info{
     display: flex;
-    background-color: #222222;
-}
-.authHeaderBox{
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
     align-items: center;
+    gap: 5px;
 }
-.authHeaderBox img{
-    height: 45px;
-}
-.authHeaderBox span{
-    color: #F5F5F5;
-    font-size: 1.3rem;
-}
-/************** NO AUTH  **************/
-.noAuthHeaderWrapper{
-    height: 50px;
-    display: flex;
-    background-color: #222222;
-}
-.noAuthHeaderBox{
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.noAuthHeaderBox img{
-    height: 45px;
-}
-.noAuthHeaderBox span{
-    color: #F5F5F5;
-    font-size: 1.3rem;
-}
-/**************************************/
-/**************************************/
-/**************  INDEX  ***************/
-/**************************************/
-/**************************************/
-/* main wrapper for the page */
-.indexWrapper{
-    height: calc(100vh - 100px);
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
-/* colored box with login/reg */
-.mainIndexBox{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 340px;
-    width: 300px;
-    padding: 24px;
-    background-color: #222222;
-    border-radius: 15px;
-}
-/* Logo */
-.mainIndexBox img{
-    height: 60px;
-    width: 60px;
-    border-radius: 15px;
-}
-/* text after logo */
-.mainIndexBox .signInSpan{
-    font-size: 1.5rem;
-    color: #F5F5F5;
-}
-/* button for login */
-.signInBtn{
-    height: 40px;
-    width: 240px;
-    border-radius: 10px;
-    background-color: #F5F5F5;
-    color: #222222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.signInBtn span{
+.post_info p:first-child{
     font-size: 1.2rem;
 }
-/* breaker */
-.indexOr{
+.post_info p:last-child{
+    opacity: 70%;
+}
+/* image */
+.post_image{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+/* like button */
+.post_likes{
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    gap: 5px;
+}
+.post_likebox{
+    width: 80px;
+    display: flex;
+    color: white;
+    align-items: center;
+    font-size: 1.1rem;
+    background-color: #333333;
+    border-radius: 30px;
+    gap: 15px;
+    height: 30px;
+}
+.post_likeimg{
+    height: 30px;
+    width: 30px;
+}
+.post_deletebox{
+    height: 30px;
+}
+.post_deleteimg{
+    height: 30px;
+    width: 30px;
+}
+/* post caption */
+.post_caption{
+    width: 100%;
+}
+.post_caption span:first-child{
+    font-size: 1.1rem;
+}
+.post_caption span:last-child{
+    opacity: 80%;
+}
+/* empty button */
+.none_btn{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    height: 30px;
+    width: 30px;
+}
+/* divider (in profile info, comments) */
+.divider{
+    width: 100%;
+    border-bottom: 1px solid #F5F5F5;
+    opacity: 70%;
+    margin: 0.2rem 0;
+}
+/* wrapper with no bg */
+.wrapper_nobg{
+    width: 90%;
+    max-width: 800px;
+    min-height: calc(100vh - 130px);
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 1rem;
-    opacity: 55%;
 }
-/* reg button */
-.signUpBtn{
-    height: 40px;
-    width: 240px;
-    border-radius: 10px;
-    background-color: #4c5699;
-    color: #F5F5F5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.signUpBtn span{
-    font-size: 1.2rem;
-}
-/**************************************/
-/**************************************/
-/**************  LOGIN  ***************/
-/**************************************/
-/**************************************/
-.loginWrapper{
-    height: calc(100vh - 100px);
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
-.mainLoginBox{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 340px;
-    width: 300px;
-    padding: 24px;
+/* list of items with backgrounds, inside the wrapper (for feed) */
+.wrapper_nobg li{
+    width: 100%;
     background-color: #222222;
+    margin: 15px auto;
     border-radius: 15px;
-}
-/* Logo */
-.mainLoginBox img{
-    height: 60px;
-    width: 60px;
-    border-radius: 15px;
-}
-/* text after logo */
-.mainLoginBox .logInSpan{
-    font-size: 1.5rem;
-    color: #F5F5F5;
-}
-/* button for login */
-.mainLoginBox button{
-    height: 40px;
-    width: 240px;
-    border-radius: 10px;
-    background-color: #F5F5F5;
-    color: #222222;
     display: flex;
     justify-content: center;
-    align-items: center;
-    border: none;
-}
-/* Text boxes for email/password */
-.mainLoginBox input{
-    height: 40px;
-    width: 240px;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: #333333;
-    color: #F5F5F5;
-}
-.mainLoginBox input:focus{
-    outline: none;
-    border: 3px solid #4c5699;
-}
-/**************************************/
-/**************************************/
-/************  SIGN UP  ***************/
-/**************************************/
-/**************************************/
-.signupWrapper{
-    height: calc(100vh - 100px);
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
-.mainSignupBox{
-    display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    height: 480px;
-    width: 300px;
-    padding: 24px;
-    background-color: #222222;
-    border-radius: 15px;
-}
-/* Logo */
-.mainSignupBox img{
-    height: 60px;
-    width: 60px;
-    border-radius: 15px;
-}
-/* text after logo */
-.mainSignupBox .signupSpan{
-    font-size: 1.5rem;
-    color: #F5F5F5;
-}
-/* button for signUp */
-.mainSignupBox button{
-    height: 40px;
-    width: 240px;
-    border-radius: 10px;
-    background-color: #4c5699;
-    color: #F5F5F5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-}
-/* Text boxes for email/password */
-.mainSignupBox input{
-    height: 40px;
-    width: 240px;
     padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: #333333;
-    color: #F5F5F5;
-}
-.mainSignupBox input:focus{
-    outline: none;
-    border: 3px solid #4c5699;
-}
-#emailHelp{
-    font-size: 1.2rem;
-    text-align: center;
 }
 /**************************************/
 /**************************************/
@@ -277,63 +141,50 @@ a{
 /**************************************/
 /***********  PROFILE INFO ************/
 .profileInfoWrapper{
-    width: 90%;
-    max-width: 600px;
-    height: 300px;
+    max-width: 800px;
+    width: 100%;
     background-color: #222222;
-    margin: 20px auto;
     display: flex;
     justify-content: center;
-    align-items: center;
     border-radius: 15px;
     padding: 15px;
 }
 /* Box with pfp and btns to change it */
-.pfpDivider{
+.profile_left{
     height: 100%;
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
 }
 /* pfp css */
-.pfpBox{
-    height: 80%;
-    width: 100%;
+.profile_picture{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.profilePictureWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 150px;
     border-radius: 50%;
     overflow: hidden;
 }
-.profilePictureWrapper img{
-    max-width: 140%;
-    max-height: 140%;
-    object-fit: cover;
+.profile_picture img{
+    max-width: 150px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
     object-position: center;
 }
 /* btns to change pfp css */
-.pfpBtns{
+.profile_btns{
     width: 100%;
     height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.pfpBtns form{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 /************  ADD PFP ****************/
 #selectPicture{
-    height: 40px;
+    height: 30px;
     width: 100px;
     border-radius: 10px;
     background-color: #F5F5F5;
@@ -345,52 +196,39 @@ a{
     font-size: 1.1rem;
 }
 #pfpUpload{
-    height: 40px;
+    height: 30px;
     width: 100px;
     opacity: 0;
     position: absolute;
 }
-#subPfp{
-    height: 40px;
-    width: 40px;
+.profile_btns img{
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     border: none;
-    background-image: url('/images/check.png');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 /* Box with text about profile */
-.textDivider{
+.profile_right{
     height: 100%;
     width: 60%;
-    padding: 45px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 15px;
     font-size: 1.2rem;
 }
-.profileInfoDivider{
-    border-bottom: 1px solid #F5F5F5;
-    height: 0px;
-    width: 100%;
-    opacity: 60%;
-}
 /************  FRIENDS ****************/
-.friendsWrapper{
-    width: 90%;
-    max-width: 600px;
+.profile_friends{
     padding: 25px;
+    width: 100%;
     background-color: #222222;
-    margin: 20px auto;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
     justify-content: space-around;
     align-items: center;
     gap: 20px;
-}
-.friendsWrapper h2{
-    font-size: 1.1rem;
+    margin-top: 15px;
 }
 /* Box with list of friends */
 .friendList{
@@ -400,74 +238,42 @@ a{
     align-content: flex-start;
     gap: 10px;
     flex-wrap: wrap;
-    width: 100%;
-    height: 80%;
 }
-.friendBox{
+.friend_box{
     text-align: center;
 }
-.friendPicture{
+.friend_box img{
     height: 120px;
     width: 120px;
     padding: 15px;
     border-radius: 50%;
 }
-#message{
-    height: 40px;
-    width: 140px;
-    border-radius: 10px;
-    background-color: #F5F5F5;
-    color: #222222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    font-size: 1.1rem;
-}
 /************  ADD POST ***************/
-.addPostWrapper{
-    width: 90%;
-    max-width: 600px;
-    height: 350px;
+.profile_addpost{
     background-color: #222222;
-    margin: 20px auto;
+    margin-top: 15px;
     display: flex;
     border-radius: 15px;
     justify-content: center;
     align-items: center;
-}
-.addPostWrapper form{
-    padding: 25px;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    padding: 25px;
+}
+.profile_addpost form{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    gap: 15px;
 }
-.addPostWrapper form div{
+.profile_addpost form div{
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.addPostWrapper input[type="text"]{
-    width: 80%;
-    max-width: 400px;
-    padding: 15px;
-    height: 2rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 10px;
-    background-color: #333333;
-    color: #F5F5F5;
-}
-.addPostWrapper input[type='text']:focus{
-    outline: none;
-    border: 3px solid #4c5699;
-}
-.addPostWrapper textarea{
-    width: 80%;
-    max-width: 400px;
+.profile_addpost textarea{
+    width: 100%;
+    max-width: 600px;
     font-size: 1.2rem;
     padding: 15px;
     resize: none;
@@ -477,12 +283,12 @@ a{
     background-color: #333333;
     color: #F5F5F5;
 }
-.addPostWrapper textarea:focus{
+.profile_addpost textarea:focus{
     outline: none;
     border: 3px solid #4c5699;
 }
 #selectFile{
-    height: 40px;
+    height: 30px;
     width: 240px;
     border-radius: 10px;
     background-color: #F5F5F5;
@@ -492,15 +298,15 @@ a{
     align-items: center;
     border: none;
 }
-.addPostWrapper input[type='file']{
-    height: 40px;
+.profile_addpost input[type='file']{
+    height: 30px;
     width: 240px;
     opacity: 0;
     position: absolute;
 }
 /* button to send a new post */
-.addPostWrapper button{
-    height: 40px;
+.profile_addpost button{
+    height: 30px;
     width: 240px;
     border-radius: 10px;
     background-color: #F5F5F5;
@@ -509,36 +315,6 @@ a{
     justify-content: center;
     align-items: center;
     border: none;
-}
-/************  MY POSTS  **************/
-.myPostsWrapper{
-    width: 90%;
-    max-width: 600px;
-    background-color: #222222;
-    margin: 20px auto;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-}
-.myPostsWrapper li{
-    width: 90%;
-    background-color: #333333;
-    margin: 40px auto;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-}
-.myPostsImg{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 15px;
 }
 /*********  RETURN TO FEED ************/
 .returnToFeed{
@@ -562,178 +338,48 @@ a{
 /**************  FEED  ****************/
 /**************************************/
 /**************************************/
-.feedWrapper{
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-}
-.feedWrapper li{
-    width: 100%;
-    background-color: #222222;
-    margin: 20px auto;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-}
-/* information about poster */
-.feed_info{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    gap: 5px;
-}
-.feed_info p:first-child{
-    font-size: 1.2rem;
-}
-.feed_info p:last-child{
-    opacity: 70%;
-}
-/* image */
-.feedImg{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 15px;
-}
-/* like button */
-.feed_likes{
-    width: 100%;
-    margin: 5px 0;
-}
-.feed_likebox{
-    width: 80px;
-    display: flex;
-    color: white;
-    align-items: center;
-    font-size: 1.1rem;
-    background-color: #333333;
-    border-radius: 30px;
-    gap: 15px;
-}
-.feed_likeimg{
-    height: 30px;
-    width: 30px;
-}
-/* post caption */
-.feed_caption{
-    width: 100%;
-}
-.feed_caption span:first-child{
-    font-size: 1.1rem;
-}
-.feed_caption span:last-child{
-    opacity: 80%;
-}
+
 /**************************************/
 /**************************************/
 /**************  POST  ****************/
 /**************************************/
 /**************************************/
-.postInfoWrapper{
-    width: 90%;
-    max-width: 600px;
-    padding: 15px;
+.postSecodaryWrapper{
+    width: 100%;
     background-color: #222222;
-    margin: 20px auto;
-    display: flex;
+    margin: 15px auto;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.postImage{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 15px;
-}
-/* wrapper for likes and delete div */
-.likes_delete{
-    width: 100%;
-    background-color: #333333;
-    margin: 10px auto;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 15px;
-}
-.likeBtn{
-    height: 32px;
-    width: 32px;
-    background-color: transparent;
-    background-image: url('/images/like.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
-}
-.likes_delete .likes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-.likeCount{
-    font-size: 1.1rem;
-    color: #4c5699;
-}
-.trashBtn{
-    height: 32px;
-    width: 32px;
-    background-color: transparent;
-    background-image: url('/images/trash.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
-}
-/* camtion under post (wrapper) */
-.caption{
-    width: 100%;
-    background-color: #333333;
-    margin: 10px auto;
-    border-radius: 15px;
-    padding: 15px;
-    font-size: 1.3rem;
 }
 /* Wrapper for "add comment" */
-/* Wrapper for "add comment" */
-.addCommentWrapper{
-    width: 90%;
-    max-width: 600px;
-    padding: 15px;
-    background-color: #222222;
-    margin: 20px auto;
-    border-radius: 15px;
-}
-.commentForm{
+.comment_form{
+    width: 100%;
+    max-width: 800px;
+    margin: 2px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
-.commentForm textarea{
+.comment_form textarea{
     width: 100%;
     font-size: 1.2rem;
     padding: 15px;
     resize: none;
-    border: none;
+    border: 3px solid #333333;
     border-radius: 10px;
     background-color: #333333;
     color: #F5F5F5;
 }
-.commentForm textarea:focus{
+.comment_form textarea:focus{
     outline: none;
     border: 3px solid #4c5699;
 }
-.commentForm button{
+.comment_form button{
     height: 40px;
     width: 240px;
     border-radius: 10px;
@@ -747,73 +393,21 @@ a{
 }
 /* Wrapper for comment list */
 .commentListWrapper{
-    width: 90%;
-    max-width: 600px;
-    padding: 15px;
-    background-color: #222222;
     margin: 10px auto;
-    border-radius: 15px;
 }
 .commentListWrapper li{
+    max-width: 800px;
     width: 100%;
     font-size: 1.2rem;
     padding: 10px;
     resize: none;
     border: none;
     border-radius: 10px;
-    background-color: #333333;
+    background-color: #222222;
     color: #F5F5F5;
     margin: 0.4rem 0;
-}
-.commentListWrapper li .divider{
-    width: 100%;
-    border-bottom: 1px solid #F5F5F5;
-    opacity: 70%;
-    margin: 0.2rem 0;
-}
-/* wrapper for comment likes and delete div */
-.comment_likes_delete{
-    width: 100%;
-    background-color: #333333;
-    margin: 1px auto;
-    border-radius: 3px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px;
-}
-.comment_likeBtn{
-    height: 16px;
-    width: 16px;
-    background-color: transparent;
-    background-image: url('/images/like.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
-}
-.comment_likes_delete .comment_likes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-.comment_likeCount{
-    font-size: 1.1rem;
-    color: #4c5699;
-}
-.comment_trashBtn{
-    height: 16px;
-    width: 16px;
-    background-color: transparent;
-    background-image: url('/images/trash.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
-}
-.pfp_name{
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    align-items: flex-start;
 }
 /* return to feed/profile btns */
 .postBtmBtns{
@@ -831,63 +425,56 @@ a{
 }
 /**************************************/
 /**************************************/
-/**************  CHAT  ****************/
+/*************  SEARCH  ***************/
 /**************************************/
 /**************************************/
-.chatWrapper{
-    width: 90%;
-    max-width: 600px;
-    padding: 15px;
-    background-color: #222222;
-    margin: 20px auto;
+.search_barwrapper{
     display: flex;
-    color: #F5F5F5;
-    border-radius: 15px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 5px;
 }
-.messagesWrapper{
-    width: 90%;
-    max-width: 600px;
+.search_barwrapper img{
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+.search_barwrapper input[type="text"]{
+    width: 100%;
+    font-size: 1.2rem;
+    height: 30px;
     padding: 15px;
+    resize: none;
+    border: 3px solid #333333;
+    border-radius: 10px;
     background-color: #333333;
-    margin: 20px auto;
-    display: flex;
     color: #F5F5F5;
-    border-radius: 15px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-.sent{
-    width: 100%;
+.search_barwrapper input[type="text"]:focus{
+    outline: none;
+    border: 3px solid #4c5699;
+}
+.search_result{
+    width: 80%;
+}
+.search_result li{
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.sent p{
-    padding: 15px;
-    background-color: #222222;
-    color: #F5F5F5;
-    border-radius: 15px;
-}
-.received{
-    width: 100%;
-    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    gap: 15px;
+    padding: 10px;
 }
-.received p{
-    padding: 15px;
-    background-color: #222222;
-    color: #F5F5F5;
-    border-radius: 15px;
-}
-
-/* Footer CSS */
-.footerDiv{
-    height: 50px;
+.search_pfp{
     width: 100%;
-    background-color: #222222;
+    max-width: 75px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: contain;
+    object-position: center;
+}
+.search_name{
+    width: 100%;
+    height: 75px;
+}
+.search_result a{
+    width: 100%;
+    max-width: 75px;
 }

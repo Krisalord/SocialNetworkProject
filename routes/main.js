@@ -9,7 +9,6 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth")
 
 //main Routes
 router.get("/", homeController.getIndex)
-router.get("/profile", ensureAuth, postsController.getProfile)
 router.get("/feed", ensureAuth, postsController.getFeed)
 router.get("/login", authController.getLogin)
 router.post("/login", authController.postLogin)
@@ -17,12 +16,13 @@ router.get("/logout", authController.logout)
 router.get("/signup", authController.getSignup)
 router.post("/signup", authController.postSignup)
 //profile routes
+router.get("/profile", ensureAuth, profileController.getProfile)
 router.post('/addPfp', upload.single("file"), profileController.uploadPic)
 //profile of another user
 router.get('/profile/:id', profileController.getFriendProfile)
-//link for chat
-router.get('/chat/:id', profileController.getChat)
-//send message
-router.post('/chat/sendMessage/:id', profileController.sendMessage)
-
+//search routes
+router.get('/search', profileController.getSearch)
+router.get('/search/execute', profileController.executeSearch)
+//add friend
+router.post('/addfriend/:id', profileController.addFriend)
 module.exports = router

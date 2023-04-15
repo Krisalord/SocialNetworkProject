@@ -76,6 +76,7 @@ exports.postSignup = (req, res, next)=>{
         userName: req.body.userName,
         email: req.body.email,
         password: req.body.password,
+        friendList: [],
     })
     User.findOne({ $or: [{ email: req.body.email }, { userName: req.body.userName }] }, (err, existingUser) => {
         if(err){

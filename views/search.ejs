@@ -1,0 +1,26 @@
+<%- include('partials/headerAuth') -%>
+
+<div class='wrapper_nobg'>
+    <!-- search bar -->
+    <form action="/search/execute" method="GET" class="search_barwrapper">
+        <input type="text" placeholder="Search" name="search_query">
+        <button type="submit" class="none_btn search_btn"><img src="/images/search.png"></button>
+    </form>
+    <!-- list of users -->
+    <ul class="search_result">
+        <% for(let i = 0; i < foundUsers.length; i++){ %>
+            <li>
+                <a href="/profile/<%=foundUsers[i]._id%>"><img src="<%=foundUsers[i].profilePic%>" class="search_pfp"></a>
+                <div class="search_name">
+                    <p><%=foundUsers[i].userName%></p>
+                    <div class="divider"></div>
+                    <form id="form_<%=foundUsers[i]._id%>" action="/addfriend/<%=foundUsers[i]._id%>" method="POST">
+                    <button></button>
+                    </form>
+                </div>
+            </li>
+        <% } %>
+    </ul>
+</div>
+
+<%- include('partials/footer') -%>

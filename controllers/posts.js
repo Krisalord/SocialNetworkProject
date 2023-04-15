@@ -4,19 +4,9 @@ const Comment = require('../models/Comment')
 const User = require('../models/User')
 
 module.exports = {
-    getProfile: async(req, res)=>{
-        try{
-            //users - all users from DB to friend list (to be changed)
-            const users = await User.find({_id: {$ne: req.user._id}})
-            const posts = await Post.find({user: req.user.id})
-            res.render('profile.ejs', {posts: posts, user: req.user, users: users})
-        }catch(err){
-            console.log(err)
-        }
-    },
     getFeed: async(req, res)=>{
         try{
-            const posts = await Post.find().sort({createdAt: 'desc'}).populate('user', ['userName', 'profilePic']).lean()
+            const posts = await Post.find().sort({createdAt: 'desc'}).populate('user', ['userName', 'profilePic', 'id']).lean()
             res.render('feed.ejs', {posts: posts})
         }catch(err){
             console.log(err)
@@ -25,9 +15,10 @@ module.exports = {
     getPost: async(req, res)=>{
         try{
             const post = await Post.findById(req.params.id)
-            const comments = await Comment.find({post: req.params.id}).sort({createdAt: 'desc'}).lean()
+            const comments = await Comment.find({post: req.params.id}).sort({createdAt: 'desc'}).populate('user', 'profilePic').lean()
             const userCreated = await User.findById(post.user)
             res.render('post.ejs', {post: post, user: req.user, comments: comments, userCreated: userCreated})
+            
         }catch(err){
             console.log(err)
         }
@@ -37,7 +28,6 @@ module.exports = {
             const result = await cloudinary.uploader.upload(req.file.path)
             
             await Post.create({
-                title: req.body.title,
                 image: result.secure_url,
                 cloudinaryId: result.public_id,
                 caption: req.body.caption,

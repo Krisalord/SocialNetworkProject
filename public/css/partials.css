@@ -1,0 +1,44 @@
+/**************************************/
+/**************************************/
+/**************  HEADER  **************/
+/**************************************/
+/**************************************/
+.headerWrapper{
+    height: 50px;
+    display: flex;
+    background-color: #222222;
+}
+.header_box{
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_box img{
+    height: 45px;
+}
+.header_box span{
+    color: #F5F5F5;
+    font-size: 1.3rem;
+}
+.header_box a{
+    height: 45px;
+    width: 45px;
+}
+/* div with icons */
+.header_icons{
+    display: flex;
+    gap: 1rem;
+}
+/**************************************/
+/**************************************/
+/**************  FOOTER  **************/
+/**************************************/
+/**************************************/
+.footerDiv{
+    height: 50px;
+    width: 100%;
+    background-color: #222222;
+}

@@ -1,8 +1,6 @@
 const cloudinary = require('../middleware/cloudinary')
 const User = require('../models/User')
 const Post = require('../models/Post')
-const Chat = require('../models/Chat')
-const Message = require('../models/Message')
 
 module.exports = {
     uploadPic: async(req, res)=>{
@@ -23,61 +21,54 @@ module.exports = {
             console.log(err)
         }
     },
+    getProfile: async(req, res)=>{
+        try{
+            //users - all users from DB to friend list (to be changed)
+            const users = await User.find({_id: {$ne: req.user._id}})
+            const posts = await Post.find({user: req.user.id}).sort({createdAt: 'desc'}).populate('user', ['userName', 'profilePic'])
+            res.render('profile.ejs', {posts: posts, user: req.user, users: users})
+        }catch(err){
+            console.log(err)
+        }
+    },
     getFriendProfile: async(req, res)=>{
         try{
             //users - all users from DB to friend list (to be changed)
             const users = await User.find({_id: {$ne: req.user._id}})
             const user = await User.findById(req.params.id)
-            const posts = await Post.find({user: user.id})
+            const posts = await Post.find({user: user.id}).populate('user', ['userName', 'profilePic'])
             res.render('profileFriend.ejs', {posts: posts, user: user, users: users})
         }catch(err){
             console.log(err)
         }
     },
-    getChat: async(req, res)=>{
+    getSearch: async(req, res)=>{
         try{
-            //retrieve user IDs from URL parameters
-            const currentUserID = req.user.id
-            const pickedUserID = req.params.id
-            //get userNames from both users
-            const currentUser = await User.findById(currentUserID)
-            const pickedUser = await User.findById(pickedUserID)
-            //check if chat already exists
-            const existingChat = await Chat.findOne({
-                $or: [
-                    {userOne: currentUserID, userTwo: pickedUserID},
-                    {userOne: pickedUserID, userTwo: currentUserID},
-                ],
-            })
-            //if it exists - render chat.ejs
-            if(existingChat){
-                //find all messages from that chat using ID of the chat
-                const messages = await Message.find({chatId: existingChat._id}).sort({createdAt: 'asc'})
-                return res.render('chat.ejs', {chat: existingChat, messages: messages, currentUser: existingChat.userOne, pickedUser: existingChat.userTwo})
-            }
-            //if not - create new chat
-            const newChat = new Chat({
-                userOne: currentUserID,
-                userOneName: currentUser.userName,
-                userTwo: pickedUserID,
-                userTwoName: pickedUser.userName,
-            })
-            await newChat.save()
-            res.render('chat.ejs', {chat: newChat, currentUser: currentUser, pickedUser: pickedUser})
-
+            const foundUsers = await User.find().lean()
+            res.render('search.ejs', {foundUsers: foundUsers})
         }catch(err){
             console.log(err)
         }
     },
-    sendMessage: async(req, res)=>{
+    executeSearch: async(req, res)=>{
         try{
-            await Message.create({
-                chatId: req.params.id,
-                sender: req.user.id,
-                content: req.body.messageText,
-            })
-            res.redirect("/chat/"+req.params.id)
+            const search_query = req.query.search_query
+            const foundUsers = await User.find({userName: search_query})
+            res.render('search.ejs', {foundUsers: foundUsers})
         }catch(err){
+            console.log(err)
+        }
+    },
+    addFriend: async(req, res)=>{
+        try{
+            console.log(req.user.id)
+            console.log(req.params.id)
+
+            const updateUser = await User.findOneAndUpdate({_id: req.user.id }, { $push: { friendList: req.params._id } }, { new: true })
+
+            console.log(updateUser)
+            res.redirect('/profile')
+        } catch(err){
             console.log(err)
         }
     },

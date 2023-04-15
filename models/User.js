@@ -12,6 +12,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         unique: true
     },
+    friendList:{
+        type: Array,
+        required: true
+    },
     profilePic:{
         type: String,
         require: false
