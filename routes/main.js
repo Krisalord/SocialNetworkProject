@@ -20,13 +20,9 @@ router.get("/profile", ensureAuth, profileController.getProfile)
 router.post('/addPfp', upload.single("file"), profileController.uploadPic)
 //profile of another user
 router.get('/profile/:id', profileController.getFriendProfile)
-<<<<<<< HEAD
 //search routes
 router.get('/search', profileController.getSearch)
 router.get('/search/execute', profileController.executeSearch)
 //add friend
 router.post('/addfriend/:id', profileController.addFriend)
-=======
-
->>>>>>> 52a90eefe00608993dd98a38e41a105093b6b0d2
 module.exports = router

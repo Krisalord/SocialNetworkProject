@@ -35,107 +35,11 @@ a{
 /* general post design for feed/opened post/feed in "my profile" */
 /* information about poster */
 .post_info{
-<<<<<<< HEAD
-    display: flex;
-    width: 100%;
-=======
     display: flex;
     width: 100%;
     align-items: center;
     gap: 5px;
 }
-.post_info p:first-child{
-    font-size: 1.2rem;
-}
-.post_info p:last-child{
-    opacity: 70%;
-}
-/* image */
-.post_image{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 15px;
-}
-/* like button */
-.post_likes{
-    width: 100%;
-    margin: 5px 0;
-    display: flex;
-    gap: 5px;
-}
-.post_likebox{
-    width: 80px;
-    display: flex;
-    color: white;
-    align-items: center;
-    font-size: 1.1rem;
-    background-color: #333333;
-    border-radius: 30px;
-    gap: 15px;
-    height: 30px;
-}
-.post_likeimg{
-    height: 30px;
-    width: 30px;
-}
-.post_deletebox{
-    height: 30px;
-}
-.post_deleteimg{
-    height: 30px;
-    width: 30px;
-}
-/* post caption */
-.post_caption{
-    width: 100%;
-}
-.post_caption span:first-child{
-    font-size: 1.1rem;
-}
-.post_caption span:last-child{
-    opacity: 80%;
-}
-/* empty button */
-.none_btn{
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-    height: 30px;
-    width: 30px;
-}
-/* divider (in profile info, comments) */
-.divider{
-    width: 100%;
-    border-bottom: 1px solid #F5F5F5;
-    opacity: 70%;
-    margin: 0.2rem 0;
-}
-/**************************************/
-/**************************************/
-/**************  HEADER  **************/
-/**************************************/
-/**************************************/
-.headerWrapper{
-    height: 50px;
-    display: flex;
-    background-color: #222222;
-}
-.headerBox{
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
->>>>>>> 52a90eefe00608993dd98a38e41a105093b6b0d2
-    align-items: center;
-    gap: 5px;
-}
-<<<<<<< HEAD
 .post_info p:first-child{
     font-size: 1.2rem;
 }
@@ -229,14 +133,6 @@ a{
     flex-direction: column;
     align-items: center;
     padding: 15px;
-=======
-.headerBox img{
-    height: 45px;
-}
-.headerBox span{
-    color: #F5F5F5;
-    font-size: 1.3rem;
->>>>>>> 52a90eefe00608993dd98a38e41a105093b6b0d2
 }
 /**************************************/
 /**************************************/
@@ -442,31 +338,7 @@ a{
 /**************  FEED  ****************/
 /**************************************/
 /**************************************/
-<<<<<<< HEAD
 
-=======
-.wrapper_nobg{
-    width: 90%;
-    max-width: 800px;
-    margin: 15px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-}
-.wrapper_nobg li{
-    width: 100%;
-    background-color: #222222;
-    margin: 15px auto;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-}
->>>>>>> 52a90eefe00608993dd98a38e41a105093b6b0d2
 /**************************************/
 /**************************************/
 /**************  POST  ****************/
@@ -551,7 +423,6 @@ a{
     font-size: 1rem;
     margin: 0.5rem auto;
 }
-<<<<<<< HEAD
 /**************************************/
 /**************************************/
 /*************  SEARCH  ***************/
@@ -592,11 +463,6 @@ a{
     padding: 10px;
 }
 .search_pfp{
-=======
-/* Footer CSS */
-.footerDiv{
-    height: 50px;
->>>>>>> 52a90eefe00608993dd98a38e41a105093b6b0d2
     width: 100%;
     max-width: 75px;
     aspect-ratio: 1 / 1;
