@@ -42,6 +42,7 @@ module.exports = {
             console.log(err)
         }
     },
+<<<<<<< HEAD
     getSearch: async(req, res)=>{
         try{
             const foundUsers = await User.find().lean()
@@ -72,4 +73,6 @@ module.exports = {
             console.log(err)
         }
     },
+=======
+>>>>>>> 52a90eefe00608993dd98a38e41a105093b6b0d2
 }
