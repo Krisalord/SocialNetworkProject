@@ -39,7 +39,7 @@
         <!-- add comment box -->
         <form action='/comment/createComment/<%= post._id %>' method='POST' class='comment_form'>
             <textarea id='comment' name='comment' placeholder='Your comment' maxlength='144'></textarea>
-            <button type='submit'>Submit</button>
+            <button type='submit' class="whitebg_btn">Submit</button>
         </form>
         <!-- list of comments -->
         <ul class="commentListWrapper">
@@ -79,8 +79,6 @@
         </ul>          
     </div>
 </div>
-<p><a href='/profile' class='postBtmBtns'>Return to Profile</a></p>
-<p><a href='/feed' class='postBtmBtns'>Return to Feed</a></p>
 
 <%- include('partials/footer') -%>
 

@@ -134,6 +134,20 @@ a{
     align-items: center;
     padding: 15px;
 }
+/* button white bg design */
+.whitebg_btn{
+    height: 20px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+}
 /**************************************/
 /**************************************/
 /************  PROFILE  ***************/
@@ -316,23 +330,6 @@ a{
     align-items: center;
     border: none;
 }
-/*********  RETURN TO FEED ************/
-.returnToFeed{
-    width: 100%;
-}
-.returnToFeed span{
-    height: 40px;
-    width: 240px;
-    border-radius: 10px;
-    background-color: #F5F5F5;
-    color: #222222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    margin: 2rem auto;
-    font-size: 1rem;
-}
 /**************************************/
 /**************************************/
 /**************  FEED  ****************/
@@ -395,34 +392,6 @@ a{
 .commentListWrapper{
     margin: 10px auto;
 }
-.commentListWrapper li{
-    max-width: 800px;
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 10px;
-    resize: none;
-    border: none;
-    border-radius: 10px;
-    background-color: #222222;
-    color: #F5F5F5;
-    margin: 0.4rem 0;
-    display: flex;
-    align-items: flex-start;
-}
-/* return to feed/profile btns */
-.postBtmBtns{
-    height: 40px;
-    width: 240px;
-    border-radius: 10px;
-    background-color: #F5F5F5;
-    color: #222222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    font-size: 1rem;
-    margin: 0.5rem auto;
-}
 /**************************************/
 /**************************************/
 /*************  SEARCH  ***************/
@@ -431,6 +400,7 @@ a{
 .search_barwrapper{
     display: flex;
     gap: 5px;
+    width: 100%;
 }
 .search_barwrapper img{
     height: 30px;
@@ -453,7 +423,7 @@ a{
     border: 3px solid #4c5699;
 }
 .search_result{
-    width: 80%;
+    width: 100%;
 }
 .search_result li{
     display: flex;
