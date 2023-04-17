@@ -24,5 +24,6 @@ router.get('/profile/:id', profileController.getFriendProfile)
 router.get('/search', profileController.getSearch)
 router.get('/search/execute', profileController.executeSearch)
 //add friend
-router.post('/addfriend/:id', profileController.addFriend)
+router.post('/follow/:id', profileController.follow)
+router.post('/unfollow/:id', profileController.unfollow)
 module.exports = router

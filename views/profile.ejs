@@ -26,7 +26,7 @@
 	<div class='profile_friends'>
 		<h1>Following</h1>
 		<div class="friendList">
-			<% for(var i=0; i<users.length; i++) {%>
+			<% for(var i=0; i<user.friendList.length; i++) {%>
 				<div class="friend_box">
 					<a href="/profile/<%=users[i]._id%>"><img src="<%= users[i].profilePic%>"></a>
 					<h2><%=users[i].userName %></h2>

@@ -114,7 +114,7 @@ a{
 /* wrapper with no bg */
 .wrapper_nobg{
     width: 90%;
-    max-width: 800px;
+    max-width: 600px;
     min-height: calc(100vh - 130px);
     margin: 15px auto;
     display: flex;
@@ -134,20 +134,6 @@ a{
     align-items: center;
     padding: 15px;
 }
-/* button white bg design */
-.whitebg_btn{
-    height: 20px;
-    width: 240px;
-    border-radius: 10px;
-    background-color: #F5F5F5;
-    color: #222222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    font-size: 1rem;
-    margin: 0.5rem auto;
-}
 /**************************************/
 /**************************************/
 /************  PROFILE  ***************/
@@ -155,7 +141,7 @@ a{
 /**************************************/
 /***********  PROFILE INFO ************/
 .profileInfoWrapper{
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
     background-color: #222222;
     display: flex;
@@ -248,8 +234,8 @@ a{
 .friendList{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-content: flex-start;
+    justify-content: center;
+    align-content: center;
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -279,6 +265,7 @@ a{
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    width: 90%;
 }
 .profile_addpost form div{
     width: 100%;
@@ -330,12 +317,20 @@ a{
     align-items: center;
     border: none;
 }
-/**************************************/
-/**************************************/
-/**************  FEED  ****************/
-/**************************************/
-/**************************************/
-
+/* FRIEND PROFILE BUTTON TO UNFOLLOW */
+.unfollow_btn{
+    height: 20px;
+    width: 80%;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+}
 /**************************************/
 /**************************************/
 /**************  POST  ****************/
@@ -355,7 +350,7 @@ a{
 /* Wrapper for "add comment" */
 .comment_form{
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     margin: 2px auto;
     display: flex;
     flex-direction: column;
@@ -391,6 +386,9 @@ a{
 /* Wrapper for comment list */
 .commentListWrapper{
     margin: 10px auto;
+}
+.comment_text{
+    margin: 0 auto 0 0;
 }
 /**************************************/
 /**************************************/
@@ -447,4 +445,17 @@ a{
 .search_result a{
     width: 100%;
     max-width: 75px;
+}
+.search_result button{
+    height: 20px;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 1rem;
+    margin: auto 0 auto auto;
 }

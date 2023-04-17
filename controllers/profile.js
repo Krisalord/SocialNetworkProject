@@ -23,8 +23,9 @@ module.exports = {
     },
     getProfile: async(req, res)=>{
         try{
-            //users - all users from DB to friend list (to be changed)
-            const users = await User.find({_id: {$ne: req.user._id}})
+            //find all users that are in "friendList" array of the current user
+            const users = await User.find({_id: {$in: req.user.friendList}}, {userName: 1, profilePic: 1})
+            //all posts of the current user
             const posts = await Post.find({user: req.user.id}).sort({createdAt: 'desc'}).populate('user', ['userName', 'profilePic'])
             res.render('profile.ejs', {posts: posts, user: req.user, users: users})
         }catch(err){
@@ -33,19 +34,22 @@ module.exports = {
     },
     getFriendProfile: async(req, res)=>{
         try{
-            //users - all users from DB to friend list (to be changed)
-            const users = await User.find({_id: {$ne: req.user._id}})
             const user = await User.findById(req.params.id)
             const posts = await Post.find({user: user.id}).populate('user', ['userName', 'profilePic'])
-            res.render('profileFriend.ejs', {posts: posts, user: user, users: users})
+            
+            res.render('profileFriend.ejs', {posts: posts, user: user, currentUser: req.user})
         }catch(err){
             console.log(err)
         }
     },
     getSearch: async(req, res)=>{
         try{
-            const foundUsers = await User.find().lean()
-            res.render('search.ejs', {foundUsers: foundUsers})
+            const foundUsers = await User.find({
+                _id:{$ne: req.user._id},
+                _id:{$nin: req.user.friendList}
+            }).lean()
+            const filteredUsers = foundUsers.filter(user => user._id.toString() !== req.user._id.toString())
+            res.render('search.ejs', {filteredUsers: filteredUsers})
         }catch(err){
             console.log(err)
         }
@@ -54,21 +58,26 @@ module.exports = {
         try{
             const search_query = req.query.search_query
             const foundUsers = await User.find({userName: search_query})
-            res.render('search.ejs', {foundUsers: foundUsers})
+            res.render('search.ejs', {filteredUsers: foundUsers})
         }catch(err){
             console.log(err)
         }
     },
-    addFriend: async(req, res)=>{
+    follow: async(req, res)=>{
         try{
-            console.log(req.user.id)
-            console.log(req.params.id)
+            await User.findOneAndUpdate({_id: req.user.id }, { $push: { friendList: req.params.id } }, { new: true })
 
-            const updateUser = await User.findOneAndUpdate({_id: req.user.id }, { $push: { friendList: req.params._id } }, { new: true })
-
-            console.log(updateUser)
-            res.redirect('/profile')
+            res.redirect('/search')
         } catch(err){
+            console.log(err)
+        }
+    },
+    unfollow: async(req, res)=>{
+        try{
+            await User.findOneAndUpdate({_id: req.user.id}, {$pull: {friendList: req.params.id}}, {new: true})
+
+            res.redirect('/profile/' + req.params.id)
+        }catch(err){
             console.log(err)
         }
     },

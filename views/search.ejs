@@ -8,14 +8,14 @@
     </form>
     <!-- list of users -->
     <ul class="search_result">
-        <% for(let i = 0; i < foundUsers.length; i++){ %>
+        <% for(let i = 0; i < filteredUsers.length; i++){ %>
             <li>
-                <a href="/profile/<%=foundUsers[i]._id%>"><img src="<%=foundUsers[i].profilePic%>" class="search_pfp"></a>
+                <a href="/profile/<%=filteredUsers[i]._id%>"><img src="<%=filteredUsers[i].profilePic%>" class="search_pfp"></a>
                 <div class="search_name">
-                    <p><%=foundUsers[i].userName%></p>
+                    <p><%=filteredUsers[i].userName%></p>
                     <div class="divider"></div>
-                    <form id="form_<%=foundUsers[i]._id%>" action="/addfriend/<%=foundUsers[i]._id%>" method="POST" class="search_form">
-                    <button type="submit" class="whitebg_btn">Follow</button>
+                    <form id="form_<%=filteredUsers[i]._id%>" action="/follow/<%=filteredUsers[i]._id%>" method="POST" class="search_form">
+                        <button type="submit" class="whitebg_btn">Follow</button>
                     </form>
                 </div>
             </li>
