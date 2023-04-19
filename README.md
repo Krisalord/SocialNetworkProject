@@ -4,7 +4,7 @@
 
 This is my first big personal project. The goal was to create a social network web app that allowes people to share pictures, react to them by commenting and liking, and have a simple profile. While creating this project, I had to learn a lot of new libraries and how API's work in general, aswell as securing users data (password hashing, cookies etc).
 
-## Table of Content
+## Table of Contents (Optional)
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -26,13 +26,14 @@ To install this project you simply need to download the files, run `npm install`
 This app could be used as a fun project to build from (add new features), as well as an example to start your own API project from scratch.
 
 Features include:
-    - Account creation
-    - Password hashing
-    - Session storing (cookies)
-    - Uploading images
-    - Commenting under posts
-    - Feed
-    - Likes/removing posts and comments
+  - Following and unfollowing users
+  - Account creation
+  - Password hashing
+  - Session storing (cookies)
+  - Uploading images
+  - Commenting under posts
+  - Feed
+  - Likes/removing posts and comments
 
 ## Credits
 
