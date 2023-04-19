@@ -4,7 +4,7 @@
 
 This is my first big personal project. The goal was to create a social network web app that allowes people to share pictures, react to them by commenting and liking, and have a simple profile. While creating this project, I had to learn a lot of new libraries and how API's work in general, aswell as securing users data (password hashing, cookies etc).
 
-## Table of Contents (Optional)
+## Table of Content
 
 * [Installation](#installation)
 * [Usage](#usage)
