@@ -6,12 +6,6 @@
 			<div class='profile_picture'>
 				<img src="<%= user.profilePic%>">
 			</div>
-			<% if(currentUser.friendList.includes(user._id)){ %>
-				<form action="/unfollow/<%=user._id%>" method="POST">
-					<% console.log(user._id) %>
-					<button type="submit" class="unfollow_btn">Unfollow</button>
-				</form>
-			<% } %>
 		</div>
 		<!-- right side of the profile -->
 		<div class='profile_right'>

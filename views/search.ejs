@@ -14,9 +14,6 @@
                 <div class="search_name">
                     <p><%=filteredUsers[i].userName%></p>
                     <div class="divider"></div>
-                    <form id="form_<%=filteredUsers[i]._id%>" action="/follow/<%=filteredUsers[i]._id%>" method="POST" class="search_form">
-                        <button type="submit" class="whitebg_btn">Follow</button>
-                    </form>
                 </div>
             </li>
         <% } %>

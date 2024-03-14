@@ -9,7 +9,6 @@ This is my first big personal project. The goal was to create a social network w
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Features](#features)
 
 ## Installation
 
@@ -20,19 +19,19 @@ To install this project you simply need to download the files, run `npm install`
   - API_KEY = `your cloudinary api key`
   - API_SECRET = `your cloudinary api secret`
 
-## Usage 
+## Usage
 
 This app could be used as a fun project to build from (add new features), as well as an example to start your own API project from scratch.
 
 Features include:
-  - Following and unfollowing users
   - Account creation
   - Password hashing
   - Session storing (cookies)
   - Uploading images
   - Commenting under posts
-  - Feed
-  - Likes/removing posts and comments
+  - Feed with all the posts
+  - Likes for posts and comments
+  - Removing posts and comments
 
 ## License
 

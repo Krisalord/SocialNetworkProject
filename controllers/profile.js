@@ -23,8 +23,6 @@ module.exports = {
     },
     getProfile: async(req, res)=>{
         try{
-            //find all users that are in "friendList" array of the current user
-            const users = await User.find({_id: {$in: req.user.friendList}}, {userName: 1, profilePic: 1})
             //all posts of the current user
             const posts = await Post.find({user: req.user.id}).sort({createdAt: 'desc'}).populate('user', ['userName', 'profilePic'])
             res.render('profile.ejs', {posts: posts, user: req.user, users: users})
@@ -36,7 +34,6 @@ module.exports = {
         try{
             const user = await User.findById(req.params.id)
             const posts = await Post.find({user: user.id}).populate('user', ['userName', 'profilePic'])
-            
             res.render('profileFriend.ejs', {posts: posts, user: user, currentUser: req.user})
         }catch(err){
             console.log(err)
@@ -62,23 +59,5 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    },
-    follow: async(req, res)=>{
-        try{
-            await User.findOneAndUpdate({_id: req.user.id }, { $push: { friendList: req.params.id } }, { new: true })
-
-            res.redirect('/search')
-        } catch(err){
-            console.log(err)
-        }
-    },
-    unfollow: async(req, res)=>{
-        try{
-            await User.findOneAndUpdate({_id: req.user.id}, {$pull: {friendList: req.params.id}}, {new: true})
-
-            res.redirect('/profile/' + req.params.id)
-        }catch(err){
-            console.log(err)
-        }
-    },
+    }
 }

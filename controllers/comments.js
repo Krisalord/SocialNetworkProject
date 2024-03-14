@@ -12,7 +12,6 @@ module.exports = {
                 user: req.user.id,
                 usersLiked: "",
             })
-        console.log("Comment has been added!")
         res.redirect("/post/"+req.params.id)
         }catch(err){
             console.log(err)
@@ -24,7 +23,6 @@ module.exports = {
             req.params.commentId,
             {$inc:{likes: 1},$push:{usersLiked: req.user.id}},
             ).populate("post")
-            console.log('Comment Liked')
             res.redirect(`/post/${comment.post._id}`)
         } catch(err){
             console.log(err)
