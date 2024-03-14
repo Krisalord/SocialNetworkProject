@@ -25,7 +25,7 @@ module.exports = {
         try{
             //all posts of the current user
             const posts = await Post.find({user: req.user.id}).sort({createdAt: 'desc'}).populate('user', ['userName', 'profilePic'])
-            res.render('profile.ejs', {posts: posts, user: req.user, users: users})
+            res.render('profile.ejs', {posts: posts, user: req.user})
         }catch(err){
             console.log(err)
         }
